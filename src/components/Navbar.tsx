@@ -34,14 +34,11 @@ const Navbar = () => {
   const links = useMemo(
     () => [
       { name: t("home"), href: "#home" },
-      { name: t("services"), href: "#features" },
-      { name: t("aboutUs"), href: "#about" },
-      { name: t("careers"), href: "#why-us" },
-      { name: tDownload("title2"), href: "#download" },
-      { name: tTestimonials("title"), href: "#testimonials" },
-      { name: tPartners("title"), href: "#partners" },
+      { name: t("services"), href: "#services" },
+      { name: t("bookRide"), href: "#book-ride" },
+      { name: t("joinAgent"), href: "#join-agent" },
     ],
-    [t, tDownload, tTestimonials, tPartners]
+    [t]
   );
 
   const ref = useRef(null);
@@ -217,7 +214,7 @@ const Navbar = () => {
                   color: "#000",
                 }}
               >
-                Sign Out
+                {t("signOut")}
               </Button>
             </Box>
           ) : (
@@ -237,7 +234,7 @@ const Navbar = () => {
                 width: "100%",
               }}
             >
-              Sign In
+              {t("signIn")}
             </Button>
           )}
           <Box
@@ -247,20 +244,18 @@ const Navbar = () => {
               border: "1px solid #000",
               fontWeight: "bold",
               textTransform: "none",
-              pl: { xs: 2, md: 2 },
               gap: 1,
               background: { xs: "#E9B838", md: "white" },
-
+              cursor: "pointer",
               minWidth: "150px",
               width: "100%",
               height: { xs: "40px", md: "35px" },
-              justifyContent: "space-between",
+              justifyContent: "center",
               alignItems: "center",
               color: "#000",
             }}
           >
-            {" "}
-            Create new Account
+            {t("createAccount")}
           </Box>
         </Box>
       </Box>
@@ -411,7 +406,7 @@ const Navbar = () => {
                   color: "#FFFFFF",
                 }}
               >
-                Sign Out
+                {t("signOut")}
               </Button>
             </Box>
           ) : (
@@ -427,7 +422,7 @@ const Navbar = () => {
                 color: "#FFFFFF",
               }}
             >
-              Sign In with Google
+              {t("signIn") + " with Google"}
             </Button>
           )}
         </Box>

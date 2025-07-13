@@ -28,6 +28,55 @@ export const GoogleIconSVG = () => {
     </svg>
   );
 };
+export const HeroLineSVG = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="487"
+      height="35"
+      viewBox="0 0 487 35"
+      fill="none"
+    >
+      <path
+        d="M4 30.5C73.6307 10.8798 266.914 -16.5885 483 30.5"
+        stroke="#E9B838"
+        stroke-width="8"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+export const HerocircleSVG = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="152"
+      height="146"
+      viewBox="0 0 152 146"
+      fill="none"
+    >
+      <g opacity="0.7">
+        <circle
+          cx="99.2249"
+          cy="92.8186"
+          r="39.9978"
+          transform="rotate(-180 99.2249 92.8186)"
+          stroke="#E9B838"
+          stroke-opacity="0.5"
+          stroke-width="25"
+        />
+        <path
+          d="M37.8033 128.738C29.7195 115.916 25.9837 100.83 27.1499 85.718C28.3162 70.6056 34.3224 56.2716 44.2777 44.842C54.233 33.4125 67.6072 25.4961 82.4165 22.2671C97.2259 19.038 112.682 20.6684 126.491 26.9162"
+          stroke="#E9B838"
+          stroke-opacity="0.5"
+          stroke-width="25"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
+  );
+};
 export const AppLogoSVG = () => {
   return (
     <svg

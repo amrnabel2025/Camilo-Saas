@@ -1,3 +1,5 @@
+import Hero from "@/components/homepage/Hero";
+import Results from "@/components/homepage/happyClient";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 export default function Home({
@@ -8,5 +10,10 @@ export default function Home({
   const { locale } = use(params);
   setRequestLocale(locale);
 
-  return <div>Hello</div>;
+  return (
+    <div>
+      <Hero />
+      <Results />
+    </div>
+  );
 }
