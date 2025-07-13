@@ -1,5 +1,6 @@
-import Hero from "@/components/homepage/Hero";
 import Results from "@/components/homepage/happyClient";
+import Hero from "@/components/homepage/Hero";
+import OurFeatures from "@/components/homepage/OurFeatures";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 export default function Home({
@@ -14,6 +15,7 @@ export default function Home({
     <div>
       <Hero />
       <Results />
+      <OurFeatures />
     </div>
   );
 }
