@@ -113,8 +113,13 @@ function PricingCard({
         alignItems: "center",
         position: "relative",
         mb: 2,
-        transition: "all 0.2s",
+        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         minHeight: 600,
+        zIndex: selected ? 10 : 1,
+        transform: selected
+          ? "translateY(-18px) scale(1.02)"
+          : "translateY(0) scale(1)",
+        cursor: "pointer",
       }}
     >
       {/* Most Popular Badge */}
@@ -361,6 +366,7 @@ const Pricing = () => {
           justifyContent: "center",
           alignItems: "stretch",
           flexWrap: "wrap",
+          mt: "70px",
         }}
       >
         {plans.map((plan, idx) => (
@@ -371,6 +377,7 @@ const Pricing = () => {
               minWidth: 260,
               maxWidth: 370,
               width: "100%",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             }}
             onClick={() => setSelected(idx)}
           >
