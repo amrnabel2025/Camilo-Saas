@@ -16,11 +16,13 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
-import DownloadMenu from "./DownloadMenu";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { AppLogoSVG } from "../../public/SVGs";
 
 const Navbar = () => {
+  const { data: session } = useSession();
   const pathname = usePathname();
   const t = useTranslations("Header");
   const tDownload = useTranslations("Home.Download");
@@ -28,26 +30,25 @@ const Navbar = () => {
   const tPartners = useTranslations("Home.Partners");
   const locale = useLocale();
   const router = useRouter();
-  const getButtonColor = (isActive: boolean, isScrolled: boolean): string => {
-    if (isActive) return "#FFFFFF";
-    if (selectedItem === tDownload("title2")) return "#FFFFFF";
-    if (isScrolled) return "#027669";
-    return "#FFFFFF";
-  };
-  const links = [
-    { name: t("home"), href: "#home" },
-    { name: t("services"), href: "#features" },
-    { name: t("aboutUs"), href: "#about" },
-    { name: t("careers"), href: "#why-us" },
-    { name: tDownload("title2"), href: "#download" },
-    { name: tTestimonials("title"), href: "#testimonials" },
-    { name: tPartners("title"), href: "#partners" },
-  ];
+
+  const links = useMemo(
+    () => [
+      { name: t("home"), href: "#home" },
+      { name: t("services"), href: "#features" },
+      { name: t("aboutUs"), href: "#about" },
+      { name: t("careers"), href: "#why-us" },
+      { name: tDownload("title2"), href: "#download" },
+      { name: tTestimonials("title"), href: "#testimonials" },
+      { name: tPartners("title"), href: "#partners" },
+    ],
+    [t, tDownload, tTestimonials, tPartners]
+  );
+
   const ref = useRef(null);
 
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(links[0].name);
+  const [selectedItem, setSelectedItem] = useState(links[0]?.name || "");
 
   useOnClickOutside(ref, () => setDrawerOpen(false));
 
@@ -95,23 +96,13 @@ const Navbar = () => {
       {/* Main Navbar - Hidden when drawer is open */}
       <Box
         sx={{
-          width: { xs: "85%", md: "90%" },
+          width: "100%",
           height: "76px",
-          position: "fixed",
-          top: { xs: "10px", md: "32px" },
-          left: "50%",
-          transform: "translateX(-50%)",
           zIndex: 99999999999999,
-          backdropFilter: "blur(10px)",
           display: getDisplayValue(),
           alignItems: "center",
-          justifyContent: "space-between",
-          px: { xs: 2, md: 4 },
-          borderRadius: "8px",
-          boxShadow: `-2px -2px 100px 0px rgba(255, 255, 255, 0.10) inset,
-                     2px 2px 100px 0px rgba(66, 66, 66, 0.10) inset`,
-          backgroundSize: "cover",
-          backgroundRepeat: "round",
+          justifyContent: "space-around",
+          backgroundColor: "#FFFFFF",
         }}
       >
         {/* Logo */}
@@ -120,7 +111,7 @@ const Navbar = () => {
           alignItems="center"
           gap={1}
           onClick={() => {
-            setSelectedItem(links[0].name);
+            setSelectedItem(links[0]?.name || "");
             const section = document.querySelector("#home");
             if (section) {
               section.scrollIntoView({ behavior: "smooth" });
@@ -128,24 +119,7 @@ const Navbar = () => {
           }}
           sx={{ cursor: "pointer" }}
         >
-          {scrolled && selectedItem !== tDownload("title2") ? (
-            // <GreenLogoSVG />
-            <></>
-          ) : (
-            // <Image priority src={logo} alt="logo" />
-            <></>
-          )}
-          <Typography
-            variant="h6"
-            color={
-              scrolled && selectedItem !== tDownload("title2")
-                ? "#027669"
-                : "white"
-            }
-            fontWeight="bold"
-          >
-            {t("title")}
-          </Typography>
+          <AppLogoSVG />
         </Box>
 
         {/* Desktop Nav Links */}
@@ -166,19 +140,15 @@ const Navbar = () => {
                     section.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                variant="contained"
+                variant={isActive ? "contained" : "text"}
                 sx={{
                   textTransform: "capitalize",
                   borderRadius: "8px",
                   fontWeight: isActive ? "bold" : 500,
-                  backgroundColor: isActive
-                    ? "linear-gradient(96deg, #00796B 0.34%, #05554C 48.24%, #0F9182 99.8%)"
-                    : "rgba(255, 255, 255, 0.35)",
-                  color: getButtonColor(isActive, scrolled),
+                  backgroundColor: isActive ? "#E9B838" : "transparent",
+                  color: "#000",
                   fontSize: "16px",
-                  boxShadow: isActive
-                    ? undefined
-                    : "0px 0px 10px 0px rgba(255, 255, 255, 0.10) inset",
+
                   display:
                     name === tDownload("title2") ||
                     name === tTestimonials("title") ||
@@ -212,35 +182,85 @@ const Navbar = () => {
               borderRadius: "8px",
               fontWeight: "bold",
               textTransform: "none",
-              backgroundColor: "rgba(255, 255, 255, 0.35)",
               color: "#FFFFFF",
               px: { xs: 1, md: 2 },
-              minWidth: 0,
-              "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.45)" },
+              minWidth: "60px",
               display: { xs: "none", md: "flex" },
               gap: 1,
+              height: "40px",
             }}
           >
-            <LanguageIcon
-              fontSize="small"
-              sx={{ color: scrolled ? "#027669" : "#FFFFFF" }}
-            />
-            <Typography
-              sx={{
-                display: {
-                  xs: "none",
-                  md: "block",
-                  color: scrolled ? "#027669" : "#FFFFFF",
-                },
-              }}
-            >
-              {t("language")}
-            </Typography>
+            <LanguageIcon fontSize="small" sx={{ color: "#000" }} />
+            <Typography sx={{ color: "#000" }}>{t("language")}</Typography>
           </Button>
 
           {/* Download Button with Dropdown */}
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <DownloadMenu />
+
+          {session ? (
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                gap: 1,
+                alignItems: "center",
+              }}
+            >
+              <Typography sx={{ color: "#000" }}>
+                {session.user?.name}
+              </Typography>
+              <Button
+                onClick={() => signOut()}
+                variant="text"
+                sx={{
+                  textTransform: "capitalize",
+                  borderRadius: "8px",
+                  fontWeight: 500,
+                  color: "#000",
+                }}
+              >
+                Sign Out
+              </Button>
+            </Box>
+          ) : (
+            <Button
+              onClick={() => signIn("google")}
+              variant="text"
+              sx={{
+                display: { xs: "none", md: "flex" },
+                textTransform: "capitalize",
+                borderRadius: "8px",
+                fontWeight: 500,
+                color: "#000",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 1,
+                height: "40px",
+                width: "100%",
+              }}
+            >
+              Sign In
+            </Button>
+          )}
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              borderRadius: "8px",
+              border: "1px solid #000",
+              fontWeight: "bold",
+              textTransform: "none",
+              pl: { xs: 2, md: 2 },
+              gap: 1,
+              background: { xs: "#E9B838", md: "white" },
+
+              minWidth: "150px",
+              width: "100%",
+              height: { xs: "40px", md: "35px" },
+              justifyContent: "space-between",
+              alignItems: "center",
+              color: "#000",
+            }}
+          >
+            {" "}
+            Create new Account
           </Box>
         </Box>
       </Box>
@@ -354,7 +374,6 @@ const Navbar = () => {
               color: "#FFFFFF",
               py: 1,
               mb: 2,
-              "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.25)" },
               display: "flex",
               gap: 1,
             }}
@@ -362,9 +381,55 @@ const Navbar = () => {
             <LanguageIcon fontSize="small" />
             {t("language")}
           </Button>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <DownloadMenu />
-          </Box>
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              borderRadius: "8px",
+              fontWeight: "bold",
+              textTransform: "none",
+              pl: { xs: 2, md: 2 },
+              gap: 1,
+              background: { xs: "#164941", md: "white" },
+              width: "100%",
+              justifyContent: "space-between",
+              color: { xs: "white", md: "#008e77" },
+            }}
+          ></Box>
+          {session ? (
+            <Box sx={{ mt: 2 }}>
+              <Typography sx={{ textAlign: "center", mb: 1 }}>
+                {session.user?.name}
+              </Typography>
+              <Button
+                onClick={() => signOut()}
+                variant="contained"
+                fullWidth
+                sx={{
+                  textTransform: "capitalize",
+                  borderRadius: "8px",
+                  fontWeight: 500,
+                  color: "#FFFFFF",
+                }}
+              >
+                Sign Out
+              </Button>
+            </Box>
+          ) : (
+            <Button
+              onClick={() => signIn("google")}
+              variant="contained"
+              fullWidth
+              sx={{
+                mt: 2,
+                textTransform: "capitalize",
+                borderRadius: "8px",
+                fontWeight: 500,
+                color: "#FFFFFF",
+              }}
+            >
+              Sign In with Google
+            </Button>
+          )}
         </Box>
       </Drawer>
     </>

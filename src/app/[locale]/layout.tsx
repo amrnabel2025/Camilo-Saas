@@ -1,6 +1,7 @@
 import DisableZoom from "@/components/DisableZoom";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import NextAuthProvider from "@/components/NextAuthProvider";
 import ScrollToTop from "@/components/ScrollToTop";
 import { routing } from "@/libs/i18n/routing";
 import ThemeRegistry from "@/utils/ThemeProvider";
@@ -48,21 +49,23 @@ export default async function RootLayout({
     <html lang={lang} dir={isRtl ? "rtl" : "ltr"}>
       <body className={cn(isRtl ? "rtl" : "ltr")}>
         <NextIntlClientProvider messages={messages}>
-          <ThemeRegistry>
-            <DisableZoom />
-            <Navbar />
-            <div
-              style={{
-                minHeight: "calc(100vh - 80px)",
-                direction: isRtl ? "rtl" : "ltr",
-                textAlign: isRtl ? "right" : "left",
-              }}
-            >
-              {children}
-            </div>
-            <Footer />
-            <ScrollToTop />
-          </ThemeRegistry>
+          <NextAuthProvider>
+            <ThemeRegistry>
+              <DisableZoom />
+              <Navbar />
+              <div
+                style={{
+                  minHeight: "calc(100vh - 80px)",
+                  direction: isRtl ? "rtl" : "ltr",
+                  textAlign: isRtl ? "right" : "left",
+                }}
+              >
+                {children}
+              </div>
+              <Footer />
+              <ScrollToTop />
+            </ThemeRegistry>
+          </NextAuthProvider>
         </NextIntlClientProvider>
       </body>
     </html>
