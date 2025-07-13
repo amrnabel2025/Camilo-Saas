@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    padding: 0px!important;
+    margin: 0px!important;
+}
+
+/* RTL and LTR Support */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* RTL-specific padding adjustments */
+body.rtl .MuiButton-root {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+body.rtl .MuiListItem-root {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Fix text overflow issues in RTL */
+body.rtl .MuiTypography-root {
+  overflow-wrap: break-word;
+}
+
+/* Flip icons in RTL mode */
+body.rtl .flip-in-rtl {
+  transform: scaleX(-1);
+}
+
+/* Adjust flexbox order for RTL layouts */
+@media (max-width: 600px) {
+  body.rtl .reverse-on-rtl {
+    flex-direction: row-reverse;
+  }
+}
