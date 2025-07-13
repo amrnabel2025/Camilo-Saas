@@ -1,5 +1,11 @@
 import { Box, Button, Paper, Typography } from "@mui/material";
-import { HeroLineSVG } from "../../../public/SVGs";
+import {
+  CarSVG,
+  HeroLineSVG,
+  SittingsSVG,
+  StarsSVG,
+  TimerSVG,
+} from "../../../public/SVGs";
 
 const Results = () => {
   return (
@@ -55,7 +61,8 @@ const Results = () => {
               sx={{
                 flex: 1,
                 p: 2,
-                bgcolor: "#fffbe6",
+                background:
+                  "linear-gradient(110deg, rgba(215, 155, 27, 0.12) -0.09%, rgba(254, 248, 161, 0.12) 97.44%)",
                 borderRadius: 3,
                 minHeight: 110,
               }}
@@ -63,26 +70,34 @@ const Results = () => {
               <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
                 <Typography
                   variant="h5"
-                  sx={{ fontWeight: 700, color: "#E9B838", mr: 1 }}
+                  sx={{
+                    fontWeight: 700,
+                    color: "#E9B838",
+                    mr: 1,
+                    fontSize: { xs: 20, md: 38 },
+                  }}
                 >
                   20%
                 </Typography>
-                <Box
-                  sx={{
-                    width: 28,
-                    height: 28,
-                    bgcolor: "#f5e1a1",
-                    borderRadius: "50%",
-                  }}
-                />
               </Box>
-              <Typography sx={{ fontWeight: 600, mb: 0.5 }}>
+              <Typography sx={{ fontWeight: 600, mb: 0.5, fontSize: "18px" }}>
                 Reduction
               </Typography>
-              <Typography sx={{ color: "#666", fontSize: 13 }}>
-                in operational costs through advanced analytics and route
-                optimization.
-              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography
+                  sx={{ color: "#666", fontSize: 13, width: "50%", mt: -4 }}
+                >
+                  in operational costs through advanced analytics and route
+                  optimization.
+                </Typography>
+                <SittingsSVG />
+              </Box>
             </Paper>
             <Paper
               elevation={0}
@@ -92,31 +107,41 @@ const Results = () => {
                 bgcolor: "#fffbe6",
                 borderRadius: 3,
                 minHeight: 110,
+                background:
+                  "linear-gradient(110deg, rgba(215, 155, 27, 0.12) -0.09%, rgba(254, 248, 161, 0.12) 97.44%)",
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
                 <Typography
                   variant="h5"
-                  sx={{ fontWeight: 700, color: "#E9B838", mr: 1 }}
+                  sx={{
+                    fontWeight: 700,
+                    color: "#E9B838",
+                    mr: 1,
+                    fontSize: { xs: 20, md: 38 },
+                  }}
                 >
                   95%
                 </Typography>
-                <Box
-                  sx={{
-                    width: 28,
-                    height: 28,
-                    bgcolor: "#f5e1a1",
-                    borderRadius: "50%",
-                  }}
-                />
               </Box>
-              <Typography sx={{ fontWeight: 600, mb: 0.5 }}>
+              <Typography sx={{ fontWeight: 600, mb: 0.5, fontSize: "18px" }}>
                 Satisfaction
               </Typography>
-              <Typography sx={{ color: "#666", fontSize: 13 }}>
-                customer satisfaction rate with real-time tracking and service
-                reliability.
-              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography
+                  sx={{ color: "#666", fontSize: 13, width: "50%", mt: -4 }}
+                >
+                  customer satisfaction rate with real-time tracking and service
+                  reliability.
+                </Typography>
+                <StarsSVG />
+              </Box>
             </Paper>
           </Box>
           <Box sx={{ display: "flex", gap: 2 }}>
@@ -128,30 +153,40 @@ const Results = () => {
                 bgcolor: "#fffbe6",
                 borderRadius: 3,
                 minHeight: 110,
+                background:
+                  "linear-gradient(110deg, rgba(215, 155, 27, 0.12) -0.09%, rgba(254, 248, 161, 0.12) 97.44%)",
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
                 <Typography
                   variant="h5"
-                  sx={{ fontWeight: 700, color: "#E9B838", mr: 1 }}
+                  sx={{
+                    fontWeight: 700,
+                    color: "#E9B838",
+                    mr: 1,
+                    fontSize: { xs: 20, md: 38 },
+                  }}
                 >
                   30%
                 </Typography>
-                <Box
-                  sx={{
-                    width: 28,
-                    height: 28,
-                    bgcolor: "#f5e1a1",
-                    borderRadius: "50%",
-                  }}
-                />
               </Box>
-              <Typography sx={{ fontWeight: 600, mb: 0.5 }}>
+              <Typography sx={{ fontWeight: 600, mb: 0.5, fontSize: "18px" }}>
                 Improvement
               </Typography>
-              <Typography sx={{ color: "#666", fontSize: 13 }}>
-                in fleet management efficiency and asset utilization.
-              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography
+                  sx={{ color: "#666", fontSize: 13, width: "50%", mt: -4 }}
+                >
+                  in fleet management efficiency and asset utilization.
+                </Typography>
+                <CarSVG />
+              </Box>
             </Paper>
             <Paper
               elevation={0}
@@ -161,30 +196,47 @@ const Results = () => {
                 bgcolor: "#fffbe6",
                 borderRadius: 3,
                 minHeight: 110,
+                background:
+                  "linear-gradient(110deg, rgba(215, 155, 27, 0.12) -0.09%, rgba(254, 248, 161, 0.12) 97.44%)",
               }}
             >
-              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  mb: 1,
+                }}
+              >
                 <Typography
                   variant="h5"
-                  sx={{ fontWeight: 700, color: "#E9B838", mr: 1 }}
+                  sx={{
+                    fontWeight: 700,
+                    color: "#E9B838",
+                    mr: 1,
+                    fontSize: { xs: 20, md: 38 },
+                  }}
                 >
                   40%
                 </Typography>
-                <Box
-                  sx={{
-                    width: 28,
-                    height: 28,
-                    bgcolor: "#f5e1a1",
-                    borderRadius: "50%",
-                  }}
-                />
               </Box>
-              <Typography sx={{ fontWeight: 600, mb: 0.5 }}>
+              <Typography sx={{ fontWeight: 600, mb: 0.5, fontSize: "18px" }}>
                 Increase
               </Typography>
-              <Typography sx={{ color: "#666", fontSize: 13 }}>
-                in driver retention and safety compliance.
-              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography
+                  sx={{ color: "#666", fontSize: 13, width: "50%", mt: -4 }}
+                >
+                  in driver retention and safety compliance.
+                </Typography>
+                <TimerSVG />
+              </Box>
             </Paper>
           </Box>
         </Box>
@@ -201,7 +253,7 @@ const Results = () => {
           justifyContent: "space-around",
           position: "relative",
           mt: { xs: 4, md: 0 },
-          minHeight: 600,
+          minHeight: 850,
         }}
       >
         <Box
