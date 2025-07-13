@@ -14,7 +14,7 @@ export default function Hero() {
         alignItems: { xs: "stretch", md: "flex-start" },
         justifyContent: "space-between",
         px: { xs: 1, sm: 2, md: 10 },
-        py: { xs: 4, md: 8 },
+        pt: { xs: 4, md: 8 },
         minHeight: { md: "70vh" },
         background: "linear-gradient(90deg, #fff7e6 0%, #fff 100%)",
         position: "relative",
