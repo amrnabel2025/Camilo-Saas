@@ -30,8 +30,8 @@ export default function ThemeRegistry({ children }: { children: ReactNode }) {
         breakpoints: {
           values: {
             xs: 0,
-            sm: 800,
-            md: 1200,
+            sm: 600,
+            md: 900,
             lg: 1200,
             xl: 1536,
           },

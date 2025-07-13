@@ -17,11 +17,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import logo from "../../public/LogoApp.svg";
-import { GreenLogoSVG } from "../../public/SVGs";
-import navbarBackground from "../../public/navbarBackground.png";
 import DownloadMenu from "./DownloadMenu";
 
 const Navbar = () => {
@@ -114,7 +110,6 @@ const Navbar = () => {
           borderRadius: "8px",
           boxShadow: `-2px -2px 100px 0px rgba(255, 255, 255, 0.10) inset,
                      2px 2px 100px 0px rgba(66, 66, 66, 0.10) inset`,
-          backgroundImage: `url(${navbarBackground.src})`,
           backgroundSize: "cover",
           backgroundRepeat: "round",
         }}
@@ -134,9 +129,11 @@ const Navbar = () => {
           sx={{ cursor: "pointer" }}
         >
           {scrolled && selectedItem !== tDownload("title2") ? (
-            <GreenLogoSVG />
+            // <GreenLogoSVG />
+            <></>
           ) : (
-            <Image priority src={logo} alt="logo" />
+            // <Image priority src={logo} alt="logo" />
+            <></>
           )}
           <Typography
             variant="h6"
@@ -295,7 +292,8 @@ const Navbar = () => {
         >
           {/* Logo in drawer */}
           <Box display="flex" alignItems="center" gap={1} mb={4}>
-            <Image src={logo} alt="logo" />
+            {/* <Image src={logo} alt="logo" /> */}
+            <></>
             <Typography variant="h6" color="white" fontWeight="bold">
               Mashrouk
             </Typography>
