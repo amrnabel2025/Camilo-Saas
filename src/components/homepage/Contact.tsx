@@ -1,5 +1,6 @@
 "use client";
 
+import { useIsAr } from "@/hooks/useIsAr";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import {
@@ -15,7 +16,8 @@ import {
   SmallDotSVG,
 } from "../../../public/SVGs";
 
-export default function Main() {
+export default function Main({ t }: { t: any }) {
+  const isAr = useIsAr();
   return (
     <Box
       sx={{
@@ -62,7 +64,7 @@ export default function Main() {
             variant="subtitle2"
             sx={{ fontWeight: 600, color: "#344054" }}
           >
-            Contact Us
+            {t("contactUs")}
           </Typography>
         </Box>
 
@@ -90,14 +92,23 @@ export default function Main() {
               textAlign: { xs: "left", md: "inherit" },
             }}
           >
-            Get in Touch & Request a Demo
+            {t("heading")}
           </Typography>
 
           <Button
             variant="outlined"
             sx={{
-              background:
-                "linear-gradient(90deg, #D79B1B -7.65%, #FEF8A1 99.94%)",
+              mr: { xs: 0, md: isAr ? 0 : 2 },
+              ml: { xs: 0, md: isAr ? 4 : 0 },
+              background: isAr
+                ? "linear-gradient(270deg, #D79B1B 0%, #FEF8A1 100%)"
+                : "linear-gradient(90deg, #D79B1B 0%, #FEF8A1 100%)",
+
+              "&:hover": {
+                background: isAr
+                  ? "linear-gradient(270deg, #D79B1B 0%, #FEF8A1 100%)"
+                  : "linear-gradient(90deg, #D79B1B 0%, #FEF8A1 100%)",
+              },
 
               color: "#222",
               borderColor: "#E9B838",
@@ -107,18 +118,12 @@ export default function Main() {
               px: { xs: 2, md: 6 },
               py: { xs: 1, md: 1.5 },
               boxShadow: "0 2px 8px 0 rgba(233,184,56,0.12)",
-              "&:hover": {
-                background:
-                  "linear-gradient(90deg, #D79B1B -7.65%, #FEF8A1 99.94%)",
-                color: "#222",
-                borderColor: "#E9B838",
-              },
+
               textTransform: "none",
               width: "fit-content",
-              mr: { xs: 0, md: 2 },
             }}
           >
-            Request a Personalized Demo
+            {t("requestDemo")}
           </Button>
         </Box>
       </Box>
@@ -156,17 +161,21 @@ export default function Main() {
               textAlign: { xs: "left", md: "inherit" },
             }}
           >
-            Ready to revolutionize your fleet operations?{" "}
-            <Box component="span" sx={{ color: "#878787" }}>
-              Contact{" "}
-            </Box>
-            <Box component="span" sx={{ fontWeight: "bold", color: "#e9b838" }}>
-              Camelo
-            </Box>
-            <Box component="span" sx={{ color: "#878787" }}>
-              {" "}
-              today for a personalized consultation or to schedule a live demo.
-            </Box>
+            {t.rich("subheading", {
+              camelo: (chunks: any) => (
+                <Box
+                  component="span"
+                  sx={{ fontWeight: "bold", color: "#e9b838" }}
+                >
+                  {chunks}
+                </Box>
+              ),
+              gray: (chunks: any) => (
+                <Box component="span" sx={{ color: "#878787" }}>
+                  {chunks}
+                </Box>
+              ),
+            })}
           </Typography>
 
           {/* Contact Info Box */}
@@ -187,18 +196,18 @@ export default function Main() {
           >
             {[
               {
-                label: "Email:",
-                value: "support.camelo@amk.com.sa",
+                label: t("emailLabel"),
+                value: t("emailValue"),
                 icon: <MailSVG />,
               },
               {
-                label: "Phone:",
-                value: "+966 53 006 1555",
+                label: t("phoneLabel"),
+                value: t("phoneValue"),
                 icon: <PhoneSVG />,
               },
               {
-                label: "Address:",
-                value: "Saudi Arabia, Al-Riyadh, Wadah st.",
+                label: t("addressLabel"),
+                value: t("addressValue"),
                 icon: <LocationSVG />,
               },
             ].map((item) => (
@@ -337,6 +346,7 @@ export default function Main() {
               border: "7px solid #E9B838",
               zIndex: 99999,
               position: "relative",
+              transform: isAr ? "scaleX(-1)" : "none",
             }}
           />
         </Box>

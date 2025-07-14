@@ -11,7 +11,7 @@ export default function Home() {
   const tResults = useTranslations("Results");
   const tFeatures = useTranslations("Features");
   const tPricing = useTranslations("Pricing");
-  const tParteners = useTranslations("Parteners");
+  const tContact = useTranslations("Contact");
 
   return (
     <div style={{ overflow: "hidden", margin: 0 }}>
@@ -20,7 +20,7 @@ export default function Home() {
       <div style={{ padding: "0 50px" }}>
         <OurFeatures t={tFeatures} />
         <SharingIsBlessing t={tPricing} />
-        <Contact />
+        <Contact t={tContact} />
       </div>
     </div>
   );

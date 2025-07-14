@@ -154,5 +154,17 @@
       "desc": "in driver retention and safety compliance."
     },
     "button": "Become a Client"
+  },
+  "Contact": {
+    "contactUs": "Contact Us",
+    "heading": "Get in Touch & Request a Demo",
+    "subheading": "Ready to revolutionize your fleet operations? <gray>Contact</gray> <camelo>Camelo</camelo> <gray>today for a personalized consultation or to schedule a live demo.</gray>",
+    "emailLabel": "Email:",
+    "emailValue": "support.camelo@amk.com.sa",
+    "phoneLabel": "Phone:",
+    "phoneValue": "+966 53 006 1555",
+    "addressLabel": "Address:",
+    "addressValue": "Saudi Arabia, Al-Riyadh, Wadah st.",
+    "requestDemo": "Request a Personalized Demo"
   }
 }
