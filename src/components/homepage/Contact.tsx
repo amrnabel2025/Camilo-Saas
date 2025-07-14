@@ -3,6 +3,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import {
+  CircleImageSVG,
   CirclsSVG,
   ContactSVG,
   HeroLineSVG,
@@ -102,7 +103,7 @@ export default function Main() {
               borderRadius: 2,
               fontWeight: 700,
               fontSize: { xs: 14, md: 16 },
-              px: { xs: 2, md: 4 },
+              px: { xs: 2, md: 6 },
               py: { xs: 1, md: 1.5 },
               boxShadow: "0 2px 8px 0 rgba(233,184,56,0.12)",
               "&:hover": {
@@ -113,6 +114,7 @@ export default function Main() {
               },
               textTransform: "none",
               width: "fit-content",
+              mr: { xs: 0, md: 2 },
             }}
           >
             Request a Personalized Demo
@@ -313,12 +315,22 @@ export default function Main() {
           >
             <CirclsSVG />
           </Box>
+          <Box
+            sx={{
+              position: "absolute",
+              top: -30,
+              right: 30,
+              zIndex: 99,
+            }}
+          >
+            <CircleImageSVG />
+          </Box>
 
           <Image
             src="/contact-img.png"
             alt="parteners"
-            width={500}
-            height={500}
+            width={550}
+            height={550}
             style={{
               borderRadius: "688.5px",
               border: "7px solid #E9B838",

@@ -228,6 +228,27 @@ export const ContactSVG = () => {
     </svg>
   );
 };
+export const CircleImageSVG = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="571"
+      height="571"
+      viewBox="0 0 571 571"
+      fill="none"
+    >
+      <rect
+        x="0.3825"
+        y="0.3825"
+        width="570.235"
+        height="570.235"
+        rx="285.117"
+        stroke="#E9B838"
+        stroke-width="0.765"
+      />
+    </svg>
+  );
+};
 export const CirclsSVG = () => {
   return (
     <svg
