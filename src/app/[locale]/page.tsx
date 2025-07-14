@@ -1,23 +1,22 @@
+"use client";
 import Results from "@/components/homepage/happyClient";
 import Hero from "@/components/homepage/Hero";
 import OurFeatures from "@/components/homepage/OurFeatures";
-import Pricing from "@/components/homepage/SharingIsBlessing";
-import { setRequestLocale } from "next-intl/server";
-import { use } from "react";
-export default function Home({
-  params,
-}: Readonly<{
-  params: Promise<{ locale: string }>;
-}>) {
-  const { locale } = use(params);
-  setRequestLocale(locale);
+import SharingIsBlessing from "@/components/homepage/SharingIsBlessing";
+import { useTranslations } from "next-intl";
+
+export default function Home() {
+  const tHero = useTranslations("Hero");
+  const tResults = useTranslations("Results");
+  const tFeatures = useTranslations("Features");
+  const tPricing = useTranslations("Pricing");
 
   return (
     <div>
-      <Hero />
-      <Results />
-      <OurFeatures />
-      <Pricing />
+      <Hero t={tHero} />
+      <Results t={tResults} />
+      <OurFeatures t={tFeatures} />
+      <SharingIsBlessing t={tPricing} />
     </div>
   );
 }

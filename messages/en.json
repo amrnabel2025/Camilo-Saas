@@ -19,5 +19,140 @@
   "NotFound": {
     "message": "Not Found",
     "homeButton": "Go Home"
+  },
+  "Pricing": {
+    "sectionTitle": "Flexible Pricing for Every Fleet",
+    "sectionSubtitle": "Simple, transparent pricing. No hidden fees.",
+    "mostPopularBadge": "Most Popular",
+    "choosePlanButton": "Choose Plan",
+    "monthlyOption": "Monthly",
+    "yearlyOption": "Yearly",
+    "yearlyDiscount": "–20% off",
+    "basicPlan": {
+      "name": "Basic Plan",
+      "priceNote": "per vehicle/month",
+      "billedNote": {
+        "month": "billed monthly as $0",
+        "year": "billed yearly as $0"
+      },
+      "features": [
+        "Basic GPS tracking",
+        "Geofencing alerts",
+        "Fundamental activity reports",
+        "Driver identification",
+        "Mobile fleet access",
+        "Email support"
+      ],
+      "ideal": "Ideal for small fleets and startups seeking essential tracking and foundational management tools."
+    },
+    "standardPlan": {
+      "name": "Standard Plan",
+      "priceNote": "per vehicle/month",
+      "billedNote": {
+        "month": "billed monthly as $24",
+        "year": "billed yearly as $240"
+      },
+      "features": [
+        "All Basic Plan Features",
+        "Advanced GPS tracking",
+        "Predictive maintenance alerts",
+        "Driver behavior monitoring",
+        "Fuel consumption tracking",
+        "Automated operational reports",
+        "Priority email, chat support"
+      ],
+      "ideal": "Ideal for growing businesses requiring advanced monitoring, efficiency tools, and enhanced safety features."
+    },
+    "proPlan": {
+      "name": "Pro Plan",
+      "priceNote": "per vehicle/month",
+      "billedNote": {
+        "month": "billed monthly as $48",
+        "year": "billed yearly as $576"
+      },
+      "features": [
+        "All Standard Plan Features",
+        "AI-powered driver coaching",
+        "Advanced analytics dashboard",
+        "Seamless API integration",
+        "Customizable alerts",
+        "Dedicated account manager",
+        "On-site team training"
+      ],
+      "ideal": "Ideal for large enterprises needing comprehensive fleet management, advanced analytics, and deep integration capabilities."
+    },
+    "unlimitedPlan": {
+      "name": "Unlimited Plan",
+      "priceNote": "per vehicle/month",
+      "billedNote": {
+        "month": "billed monthly as $96",
+        "year": "billed yearly as $1152"
+      },
+      "features": [
+        "All Pro Plan Features",
+        "Unlimited data storage",
+        "Custom feature development",
+        "24/7 premium support",
+        "Advanced security, compliance",
+        "Strategic consulting",
+        "White-label branding options"
+      ],
+      "ideal": "Ideal for very large fleets and organizations requiring bespoke solutions, maximum control, and premium support."
+    }
+  },
+  "Features": {
+    "sectionTitle": "Our Designed Features for Enterprise Success",
+    "sectionSubtitle": "Innovative Tools That Scale With Your Business",
+    "feature1": {
+      "title": "Real-time Fleet Intelligence",
+      "desc": "Advanced GPS tracking with AI-powered analytics provides comprehensive visibility across your entire fleet. Monitor vehicle location, status, and performance metrics from a unified dashboard that evolves with your operational needs.",
+      "label": "Fleet Tracking"
+    },
+    "feature2": {
+      "title": "Predictive Maintenance Management",
+      "desc": "Transform reactive maintenance into proactive fleet care. Our AI algorithms analyze vehicle data to predict maintenance needs before they cause downtime, extending asset lifespan and optimizing resource allocation.",
+      "label": "Predictive Maintenance"
+    },
+    "feature3": {
+      "title": "Driver Performance Optimization",
+      "desc": "Enhance safety and efficiency through AI-driven driver behavior analysis. Identify training opportunities, recognize top performers, and implement continuous improvement programs based on actionable insights.",
+      "label": "Driver Performance Analytics"
+    },
+    "feature4": {
+      "title": "Fuel Consumption Intelligence",
+      "desc": "Reduce fuel costs and emissions with advanced consumption monitoring and optimization. Identify inefficiencies, track fuel usage, and driving behaviors to implement targeted improvement strategies.",
+      "label": "Eco"
+    },
+    "feature5": {
+      "title": "Compliance & Safety Automation",
+      "desc": "Streamline regulatory compliance with automated documentation and reporting. Ensure adherence to industry standards while maintaining comprehensive safety protocols across your entire operation.",
+      "label": "Compliance & Safety"
+    },
+    "feature6": {
+      "title": "Enterprise Analytics & Reporting",
+      "desc": "Transform fleet data into strategic business intelligence. Generate customizable reports, visualize performance trends, and leverage predictive analytics to drive continuous operational improvement.",
+      "label": "Dashboard"
+    }
+  },
+  "Results": {
+    "sectionTitle": "Measurable Results for",
+    "sectionSubtitle": "Enterprise Fleet Operations",
+    "stat1": {
+      "label": "Reduction",
+      "desc": "in operational costs through advanced analytics and route optimization."
+    },
+    "stat2": {
+      "label": "Satisfaction",
+      "desc": "customer satisfaction rate with real-time tracking and service reliability."
+    },
+    "stat3": {
+      "label": "Improvement",
+      "desc": "in fleet management efficiency and asset utilization."
+    },
+    "stat4": {
+      "label": "Increase",
+      "desc": "in driver retention and safety compliance."
+    },
+    "button": "Become a Client"
   }
 }

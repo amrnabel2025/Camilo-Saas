@@ -1,4 +1,7 @@
+"use client";
+import { statCardsTemplate } from "@/utils/constants";
 import { Box, Button, Paper, Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
 import {
   CarSVG,
   HeroLineSVG,
@@ -9,95 +12,90 @@ import {
   TimerSVG,
 } from "../../../public/SVGs";
 
-const statCards = [
-  {
-    value: "20%",
-    label: "Reduction",
-    desc: "in operational costs through advanced analytics and route optimization.",
-    Icon: SittingsSVG,
-  },
-  {
-    value: "95%",
-    label: "Satisfaction",
-    desc: "customer satisfaction rate with real-time tracking and service reliability.",
-    Icon: StarsSVG,
-  },
-  {
-    value: "30%",
-    label: "Improvement",
-    desc: "in fleet management efficiency and asset utilization.",
-    Icon: CarSVG,
-  },
-  {
-    value: "40%",
-    label: "Increase",
-    desc: "in driver retention and safety compliance.",
-    Icon: TimerSVG,
-  },
-];
+type HappyClientProps = { t: ReturnType<typeof useTranslations> };
 
-function StatCard({
-  value,
-  label,
-  desc,
-  Icon,
-}: {
-  value: string;
-  label: string;
-  desc: string;
-  Icon: React.ElementType;
-}) {
-  return (
-    <Paper
-      elevation={0}
-      sx={{
-        flex: 1,
-        p: { xs: 1.5, md: 2 },
-        background:
-          "linear-gradient(110deg, rgba(215, 155, 27, 0.12) -0.09%, rgba(254, 248, 161, 0.12) 97.44%)",
-        borderRadius: 3,
-        minHeight: 110,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-        <Typography
-          variant="h5"
-          sx={{
-            fontWeight: 700,
-            color: "#E9B838",
-            mr: 1,
-            fontSize: { xs: 20, md: 38 },
-          }}
-        >
-          {value}
-        </Typography>
-      </Box>
-      <Typography sx={{ fontWeight: 600, mb: 0.5, fontSize: "18px" }}>
-        {label}
-      </Typography>
-      <Box
+const Results = ({ t }: HappyClientProps) => {
+  const iconMap = {
+    SittingsSVG,
+    StarsSVG,
+    CarSVG,
+    TimerSVG,
+  };
+  const statCards: Array<{
+    value: string;
+    label: string;
+    desc: string;
+    Icon: React.ElementType;
+  }> = statCardsTemplate.map((card) => ({
+    ...card,
+    label: t(card.label),
+    desc: t(card.desc),
+    Icon: iconMap[card.iconKey as keyof typeof iconMap],
+  }));
+
+  function StatCard({
+    value,
+    label,
+    desc,
+    Icon,
+  }: {
+    value: string;
+    label: string;
+    desc: string;
+    Icon: React.ElementType;
+  }) {
+    return (
+      <Paper
+        elevation={0}
         sx={{
+          flex: 1,
+          p: { xs: 1.5, md: 2 },
+          background:
+            "linear-gradient(110deg, rgba(215, 155, 27, 0.12) -0.09%, rgba(254, 248, 161, 0.12) 97.44%)",
+          borderRadius: 3,
+          minHeight: 110,
           display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 1,
+          flexDirection: "column",
+          justifyContent: "center",
         }}
       >
-        <Typography sx={{ color: "#666", fontSize: 13, width: "60%", mt: -1 }}>
-          {desc}
-        </Typography>
-        <Box sx={{ display: "flex", alignItems: "center", ml: 1 }}>
-          <Icon />
+        <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 700,
+              color: "#E9B838",
+              mr: 1,
+              fontSize: { xs: 20, md: 38 },
+            }}
+          >
+            {value}
+          </Typography>
         </Box>
-      </Box>
-    </Paper>
-  );
-}
+        <Typography sx={{ fontWeight: 600, mb: 0.5, fontSize: "18px" }}>
+          {label}
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 1,
+          }}
+        >
+          <Typography
+            sx={{ color: "#666", fontSize: 13, width: "60%", mt: -1 }}
+          >
+            {desc}
+          </Typography>
+          <Box sx={{ display: "flex", alignItems: "center", ml: 1 }}>
+            <Icon />
+          </Box>
+        </Box>
+      </Paper>
+    );
+  }
 
-const Results = () => {
   return (
     <Box
       sx={{
@@ -124,9 +122,9 @@ const Results = () => {
               zIndex: 10,
             }}
           >
-            Measurable Results for
+            {t("sectionTitle")}
             <br />
-            Enterprise Fleet Operations
+            {t("sectionSubtitle")}
           </Typography>
           <HeroLineSVG />
           <Box sx={{ position: "absolute", top: -45, left: -65, zIndex: 1 }}>
@@ -142,9 +140,9 @@ const Results = () => {
             lineHeight: "30px",
           }}
         >
-          Optimize Performance, Enhance Safety, and
+          {t("sectionSubtitle")}
           <br />
-          Reduce Operational Costs.
+          {t("sectionSubtitle")}
         </Typography>
         {/* Stat Cards 2x2 Flexbox */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -215,7 +213,7 @@ const Results = () => {
               },
             }}
           >
-            Become a Client
+            {t("button")}
             <RightArrowSVG />
           </Button>
         </Box>

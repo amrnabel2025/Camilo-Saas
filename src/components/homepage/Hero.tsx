@@ -4,8 +4,8 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 import { HerocircleSVG, HeroLineSVG } from "../../../public/SVGs";
 
-export default function Hero() {
-  const t = useTranslations("Hero");
+type HeroProps = { t: ReturnType<typeof useTranslations> };
+export default function Hero({ t }: HeroProps) {
   return (
     <Box
       sx={{
