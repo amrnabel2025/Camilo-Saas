@@ -256,6 +256,8 @@ const SharingIsBlessing = ({ t }: SharingIsBlessingProps) => {
               color: "#888",
               textAlign: "center",
               fontSize: { xs: 13, md: 16 },
+              width: "80%",
+              lineHeight: "24px",
             }}
           >
             {t("sectionSubtitle")}
@@ -379,6 +381,7 @@ const SharingIsBlessing = ({ t }: SharingIsBlessingProps) => {
                 maxWidth: 370,
                 width: "100%",
                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                alignSelf: "center",
               }}
               onClick={() => setSelected(idx)}
             >

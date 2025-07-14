@@ -2,10 +2,13 @@
 
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import { HerocircleSVG, HeroLineSVG } from "../../../public/SVGs";
 
 type HeroProps = { t: ReturnType<typeof useTranslations> };
 export default function Hero({ t }: HeroProps) {
+  const isAr = usePathname().includes("ar");
+
   return (
     <Box
       sx={{
@@ -14,7 +17,7 @@ export default function Hero({ t }: HeroProps) {
         alignItems: { xs: "stretch", md: "flex-start" },
         justifyContent: "space-between",
         px: { xs: 1, sm: 2, md: 10 },
-        pt: { xs: 4, md: 8 },
+        pt: { xs: 4, md: 20 },
         minHeight: { md: "70vh" },
         background: "linear-gradient(90deg, #fff7e6 0%, #fff 100%)",
         position: "relative",
@@ -137,10 +140,11 @@ export default function Hero({ t }: HeroProps) {
         <Box
           sx={{
             position: "absolute",
-            top: { xs: -30, sm: -40, md: 0 },
-            left: { xs: 10, sm: 45 },
+            top: { xs: -30, sm: -40, md: isAr ? 7 : 0 },
+            left: { xs: 10, sm: isAr ? 71 : 45 },
             width: { xs: 60, sm: 90, md: 120 },
             zIndex: 2,
+            transform: isAr ? "rotate(100deg)" : "rotate(0deg)",
           }}
         >
           <HerocircleSVG />
@@ -152,7 +156,7 @@ export default function Hero({ t }: HeroProps) {
             bottom: { xs: -20, sm: -16 },
             right: { xs: 0, sm: 0 },
             width: { xs: 60, sm: 90, md: 120 },
-            transform: "rotate(180deg)",
+            transform: isAr ? "rotate(275deg)" : "rotate(180deg)",
             zIndex: 2,
           }}
         >
