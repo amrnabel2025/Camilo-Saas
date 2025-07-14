@@ -49,11 +49,12 @@ export default function Main() {
             alignItems: "center",
             justifyContent: "center",
             bgcolor: "#fff",
-            borderRadius: 1,
+            borderRadius: 2,
             border: "1px solid #d0d5dd",
             px: 1.5,
             py: 1,
             width: "fit-content",
+            cursor: "pointer",
           }}
         >
           <Box sx={{ width: 20, height: 20 }}>{<ContactSVG />}</Box>
@@ -298,7 +299,7 @@ export default function Main() {
               display: { xs: "none", md: "block" },
               position: "absolute",
               top: 400,
-              right: 450,
+              right: 510,
               zIndex: 999,
             }}
           >
