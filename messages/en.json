@@ -166,5 +166,14 @@
     "addressLabel": "Address:",
     "addressValue": "Saudi Arabia, Al-Riyadh, Wadah st.",
     "requestDemo": "Request a Personalized Demo"
+  },
+  "Footer": {
+    "home": "Home",
+    "services": "Our Services",
+    "vehicleType": "Vehicle Type",
+    "joinAgent": "Join Agent",
+    "copyright": "Copyright © 2024 AMK or its affiliates",
+    "terms": "Terms of Service",
+    "cookies": "Cookies Settings"
   }
 }

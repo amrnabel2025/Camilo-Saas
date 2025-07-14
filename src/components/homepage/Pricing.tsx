@@ -340,6 +340,7 @@ const SharingIsBlessing = ({ t }: SharingIsBlessingProps) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                gap: 1,
                 outline: "none",
                 ...(billing === "year" && {
                   fontWeight: 700,
