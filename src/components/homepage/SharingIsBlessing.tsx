@@ -120,6 +120,7 @@ function PricingCard({
           ? "translateY(-18px) scale(1.02)"
           : "translateY(0) scale(1)",
         cursor: "pointer",
+        backdropFilter: "blur(2px)",
       }}
     >
       {/* Most Popular Badge */}
@@ -127,14 +128,14 @@ function PricingCard({
         <Box
           sx={{
             position: "absolute",
-            top: 33,
+            top: 30,
             right: 18,
-            bgcolor: "#E9B838",
-            color: "#222",
+            bgcolor: "rgba(233, 184, 56, 0.16)",
+            color: "#D79B1B",
             fontWeight: 700,
             fontSize: 13,
             px: 2,
-            py: 0.5,
+            py: 1,
             borderRadius: 2,
             zIndex: 2,
           }}
@@ -192,7 +193,20 @@ function PricingCard({
       <Box sx={{ width: "100%", mt: 1, mb: 2 }}>
         {plan.features.map((f, i) => (
           <Box key={i} sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
-            <GraycheckSVG />
+            <Box
+              sx={{
+                width: 20,
+                height: 20,
+                mr: 1,
+                borderRadius: "12px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "#EBEFF0",
+              }}
+            >
+              <GraycheckSVG />
+            </Box>
             <Typography
               sx={{ ml: 1, color: "#222", fontWeight: 500, fontSize: 15 }}
             >
@@ -205,10 +219,10 @@ function PricingCard({
       <Box
         sx={{
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
           width: "100%",
-          bgcolor: "rgba(76,175,80,0.07)",
+          bgcolor: "rgba(245, 245, 245, 0.75)",
           borderRadius: 2,
           p: 1.5,
           mt: "auto",
@@ -302,59 +316,99 @@ const Pricing = () => {
           Simple, transparent pricing. No hidden fees.
         </Typography>
         {/* Billing Toggle */}
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 3, gap: 2 }}>
-          <Button
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            mt: 3,
+            bgcolor: "#F3F5F6",
+            borderRadius: 999,
+            p: 1,
+            width: { xs: 1, sm: "auto" },
+            minWidth: 400,
+            boxShadow: "0 1px 4px 0 rgba(0,0,0,0.03)",
+          }}
+          role="tablist"
+          aria-label="Billing period toggle"
+        >
+          <Box
+            role="tab"
+            tabIndex={0}
+            aria-selected={billing === "month"}
             onClick={() => setBilling("month")}
-            variant={billing === "month" ? "contained" : "outlined"}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") setBilling("month");
+            }}
             sx={{
-              background: billing === "month" ? "#E9B838" : undefined,
-              color: billing === "month" ? "#222" : "#E9B838",
-              borderColor: "#E9B838",
-              borderRadius: 2,
-              fontWeight: 700,
-              fontSize: 16,
+              flex: 1,
               px: 4,
               py: 1.5,
-              textTransform: "none",
+              cursor: "pointer",
+              borderRadius: 999,
+              transition: "all 0.2s",
+              fontWeight: 500,
+              fontSize: 18,
+              color: billing === "month" ? "#6B6B6B" : "#6B6B6B",
+              background: billing === "month" ? "#fff" : "transparent",
               boxShadow:
                 billing === "month"
-                  ? "0 2px 8px 0 rgba(233,184,56,0.12)"
+                  ? "0 2px 8px 0 rgba(0,0,0,0.04)"
                   : undefined,
-              "&:hover": {
-                background: billing === "month" ? "#E9B838" : "#FFF8E1",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              outline: "none",
+              ...(billing === "month" && {
+                fontWeight: 700,
                 color: "#222",
-                borderColor: "#E9B838",
-              },
+              }),
             }}
           >
             Monthly
-          </Button>
-          <Button
+          </Box>
+          <Box
+            role="tab"
+            tabIndex={0}
+            aria-selected={billing === "year"}
             onClick={() => setBilling("year")}
-            variant={billing === "year" ? "contained" : "outlined"}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") setBilling("year");
+            }}
             sx={{
-              background: billing === "year" ? "#E9B838" : undefined,
-              color: billing === "year" ? "#222" : "#E9B838",
-              borderColor: "#E9B838",
-              borderRadius: 2,
-              fontWeight: 700,
-              fontSize: 16,
+              flex: 1,
               px: 4,
               py: 1.5,
-              textTransform: "none",
+              cursor: "pointer",
+              borderRadius: 999,
+              transition: "all 0.2s",
+              fontWeight: 500,
+              fontSize: 18,
+              color: billing === "year" ? "#222" : "#6B6B6B",
+              background: billing === "year" ? "#fff" : "transparent",
               boxShadow:
-                billing === "year"
-                  ? "0 2px 8px 0 rgba(233,184,56,0.12)"
-                  : undefined,
-              "&:hover": {
-                background: billing === "year" ? "#E9B838" : "#FFF8E1",
-                color: "#222",
-                borderColor: "#E9B838",
-              },
+                billing === "year" ? "0 2px 8px 0 rgba(0,0,0,0.04)" : undefined,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              outline: "none",
+              ...(billing === "year" && {
+                fontWeight: 700,
+              }),
             }}
           >
-            Yearly
-          </Button>
+            <span style={{ fontWeight: 700 }}>Yearly</span>
+            <span
+              style={{
+                fontWeight: 400,
+                fontSize: 15,
+                marginLeft: 6,
+                color: "#6B6B6B",
+              }}
+            >
+              –20% off
+            </span>
+          </Box>
         </Box>
       </Box>
       {/* Pricing Cards */}

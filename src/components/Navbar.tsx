@@ -25,9 +25,6 @@ const Navbar = () => {
   const { data: session } = useSession();
   const pathname = usePathname();
   const t = useTranslations("Header");
-  const tDownload = useTranslations("Home.Download");
-  const tTestimonials = useTranslations("Home.Testimonials");
-  const tPartners = useTranslations("Home.Partners");
   const locale = useLocale();
   const router = useRouter();
 
@@ -100,6 +97,11 @@ const Navbar = () => {
           alignItems: "center",
           justifyContent: "space-around",
           backgroundColor: "#FFFFFF",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          boxShadow: "0 2px 4px 0 rgba(0, 0, 0, 0.05)",
         }}
       >
         {/* Logo */}
@@ -145,13 +147,6 @@ const Navbar = () => {
                   backgroundColor: isActive ? "#E9B838" : "transparent",
                   color: "#000",
                   fontSize: "16px",
-
-                  display:
-                    name === tDownload("title2") ||
-                    name === tTestimonials("title") ||
-                    name === tPartners("title")
-                      ? "none"
-                      : "flex",
                 }}
               >
                 {name}
@@ -336,11 +331,6 @@ const Navbar = () => {
                     mb: 1,
                     cursor: "pointer",
                     "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
-                    display:
-                      name === tTestimonials("title") ||
-                      name === tPartners("title")
-                        ? "none"
-                        : "flex",
                   }}
                 >
                   <ListItemText

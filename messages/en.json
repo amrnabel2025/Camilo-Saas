@@ -15,5 +15,9 @@
     "subtitle": "Transform Your Fleet Operations with AI-Powered Intelligence that Drives Innovation, Efficiency, and Growth.",
     "explore": "Explore Solutions",
     "demo": "Request a Demo"
+  },
+  "NotFound": {
+    "message": "Not Found",
+    "homeButton": "Go Home"
   }
 }

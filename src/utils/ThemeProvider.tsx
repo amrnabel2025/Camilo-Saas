@@ -45,7 +45,7 @@ export default function ThemeRegistry({ children }: { children: ReactNode }) {
           },
         },
         typography: {
-          fontFamily: '"Cabinet Grotesk", Arial, sans-serif',
+          fontFamily: '"Poppins", "Cabinet Grotesk", Arial, sans-serif',
         },
         components: {
           MuiButton: {
