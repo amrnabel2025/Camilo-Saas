@@ -1,4 +1,5 @@
 "use client";
+import { Link } from "@/libs/i18n/navigation";
 import { featuresTemplate } from "@/utils/constants";
 import { Box, Paper, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
@@ -113,7 +114,18 @@ const OurFeatures = ({ t }: OurFeaturesProps) => {
         }}
       >
         {features.map((feature, idx) => (
-          <FeatureCard key={idx} {...feature} />
+          <Link
+            key={idx}
+            href="/solutions"
+            style={{
+              textDecoration: "none",
+              flex: "1 1 540px",
+              maxWidth: 570,
+              minWidth: 0,
+            }}
+          >
+            <FeatureCard {...feature} />
+          </Link>
         ))}
       </Box>
     </Box>
