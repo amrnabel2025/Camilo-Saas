@@ -15,11 +15,19 @@ export default function Home() {
 
   return (
     <div style={{ overflow: "hidden", margin: 0 }}>
-      <Hero t={tHero} />
-      <Results t={tResults} />
+      <div id="home">
+        <Hero t={tHero} />
+      </div>
+      <div id="services">
+        <Results t={tResults} />
+      </div>
       <div style={{ padding: "0 50px" }}>
-        <OurFeatures t={tFeatures} />
-        <SharingIsBlessing t={tPricing} />
+        <div id="book-ride">
+          <OurFeatures t={tFeatures} />
+        </div>
+        <div id="join-agent">
+          <SharingIsBlessing t={tPricing} />
+        </div>
         <Contact t={tContact} />
       </div>
     </div>

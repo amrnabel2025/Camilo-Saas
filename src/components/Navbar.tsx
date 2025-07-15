@@ -46,6 +46,38 @@ const Navbar = () => {
 
   useOnClickOutside(ref, () => setDrawerOpen(false));
 
+  const scrollToSection = (hash: string) => {
+    if (!hash) return;
+    const section = document.querySelector(hash);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleNavClick = (hash: string) => {
+    // Determine the homepage path for the current locale
+    const homePath = `/`;
+    const isHome = pathname === "/";
+    if (isHome) {
+      setSelectedItem(
+        links.find((l) => l.href === hash)?.name || links[0]?.name || ""
+      );
+      scrollToSection(hash);
+    } else {
+      // Navigate to homepage with hash
+      router.push(`${homePath}${hash}`);
+    }
+  };
+
+  // Scroll to section if hash is present in URL after navigation
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      setTimeout(() => {
+        scrollToSection(window.location.hash);
+      }, 100); // Delay to ensure DOM is ready
+    }
+  }, [pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight = window.innerHeight;
@@ -109,14 +141,8 @@ const Navbar = () => {
           display="flex"
           alignItems="center"
           gap={1}
-          onClick={() => {
-            setSelectedItem(links[0]?.name || "");
-            const section = document.querySelector("#home");
-            if (section) {
-              section.scrollIntoView({ behavior: "smooth" });
-            }
-          }}
-          sx={{ cursor: "pointer" }}
+          onClick={() => handleNavClick("#home")}
+          sx={{ cursor: "pointer", ml: { xs: 2, md: 0 } }}
         >
           <AppLogoSVG />
         </Box>
@@ -132,13 +158,7 @@ const Navbar = () => {
             return (
               <Button
                 key={href}
-                onClick={() => {
-                  setSelectedItem(name);
-                  const section = document.querySelector(href);
-                  if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                onClick={() => handleNavClick(href)}
                 variant={isActive ? "contained" : "text"}
                 sx={{
                   textTransform: "capitalize",
@@ -159,7 +179,7 @@ const Navbar = () => {
         <Box sx={{ ml: "auto", display: { xs: "block", md: "none" } }}>
           <IconButton
             onClick={() => setDrawerOpen(true)}
-            sx={{ color: "white" }}
+            sx={{ color: "#E9B838" }}
           >
             <MenuIcon />
           </IconButton>
@@ -264,15 +284,15 @@ const Navbar = () => {
             top: "32px",
             right: "32px",
             zIndex: 1001,
-            backgroundColor: "#00796B",
+            backgroundColor: "#E9B838",
             color: "white",
-            "&:hover": { backgroundColor: "#005a4f" },
+            "&:hover": { backgroundColor: "#E9B838" },
             display: { xs: "flex", md: "none" },
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <MenuIcon />
+          <MenuIcon sx={{ color: "#FFFFFF" }} />
         </IconButton>
       )}
 
@@ -284,7 +304,8 @@ const Navbar = () => {
         sx={{
           "& .MuiDrawer-paper": {
             width: 250,
-            background: "linear-gradient(180deg, #00917A 0%, #006A59 100%)",
+            background: "linear-gradient(180deg, #E9B838 0%, #E9B838 100%)",
+
             color: "white",
             borderTopRightRadius: "12px",
             pt: 3,
@@ -305,7 +326,7 @@ const Navbar = () => {
             {/* <Image src={logo} alt="logo" /> */}
             <></>
             <Typography variant="h6" color="white" fontWeight="bold">
-              Mashrouk
+              Camilo
             </Typography>
           </Box>
           {/* Nav links */}
@@ -316,12 +337,8 @@ const Navbar = () => {
                 <ListItem
                   key={href}
                   onClick={() => {
-                    setSelectedItem(name);
                     setDrawerOpen(false);
-                    const section = document.querySelector(href);
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
+                    handleNavClick(href);
                   }}
                   sx={{
                     backgroundColor: isActive
@@ -348,22 +365,22 @@ const Navbar = () => {
             })}
           </List>
           {/* Language Switch Button in Drawer */}
-          {/* Download button */}
           <Button
             onClick={() => handleLanguageSwitch(locale, pathname, router)}
             sx={{
               borderRadius: "8px",
               fontWeight: "bold",
               textTransform: "none",
-              backgroundColor: "rgb(0 84 74 / 30%)",
-              color: "#FFFFFF",
+              backgroundColor: "#fff",
+              color: "#000",
+              border: "1px solid #E9B838",
               py: 1,
               mb: 2,
               display: "flex",
               gap: 1,
             }}
           >
-            <LanguageIcon fontSize="small" />
+            <LanguageIcon fontSize="small" sx={{ color: "#E9B838" }} />
             {t("language")}
           </Button>
           <Box
@@ -374,7 +391,7 @@ const Navbar = () => {
               textTransform: "none",
               pl: { xs: 2, md: 2 },
               gap: 1,
-              background: { xs: "#164941", md: "white" },
+              background: { xs: "gray", md: "white" },
               width: "100%",
               justifyContent: "space-between",
               color: { xs: "white", md: "#008e77" },
@@ -382,7 +399,7 @@ const Navbar = () => {
           ></Box>
           {session ? (
             <Box sx={{ mt: 2 }}>
-              <Typography sx={{ textAlign: "center", mb: 1 }}>
+              <Typography sx={{ textAlign: "center", mb: 1, color: "#000" }}>
                 {session.user?.name}
               </Typography>
               <Button
@@ -393,7 +410,9 @@ const Navbar = () => {
                   textTransform: "capitalize",
                   borderRadius: "8px",
                   fontWeight: 500,
-                  color: "#FFFFFF",
+                  color: "#000",
+                  backgroundColor: "#fff",
+                  border: "1px solid #E9B838",
                 }}
               >
                 {t("signOut")}
@@ -402,14 +421,15 @@ const Navbar = () => {
           ) : (
             <Button
               onClick={() => signIn("google")}
-              variant="contained"
               fullWidth
               sx={{
                 mt: 2,
                 textTransform: "capitalize",
                 borderRadius: "8px",
                 fontWeight: 500,
-                color: "#FFFFFF",
+                color: "#000",
+                backgroundColor: "#fff",
+                border: "1px solid #E9B838",
               }}
             >
               {t("signIn") + " with Google"}

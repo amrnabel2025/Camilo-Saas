@@ -109,7 +109,7 @@ const OurFeatures = ({ t }: OurFeaturesProps) => {
           flexWrap: "wrap",
           flexDirection: { xs: "column", md: "row" },
           gap: { xs: 2, md: 8 },
-          justifyContent: { xs: "center", md: "flex-start" },
+          justifyContent: "center",
           alignItems: "stretch",
         }}
       >
