@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Fab } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { Fab } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const ScrollToTop = () => {
   const [showGoTop, setShowGoTop] = useState(false);
@@ -30,7 +30,7 @@ const ScrollToTop = () => {
       onClick={scrollToTop}
       size="medium"
       sx={{
-        backgroundColor: "#008C7D",
+        backgroundColor: "#E9B838",
         position: "fixed",
         bottom: { xs: 16, lg: 32 },
         right: { xs: 16, lg: 32 },
@@ -41,7 +41,7 @@ const ScrollToTop = () => {
       }}
       aria-label="scroll back to top"
     >
-      <KeyboardArrowUpIcon />
+      <KeyboardArrowUpIcon sx={{ color: "#FFFFFF" }} />
     </Fab>
   );
 };
