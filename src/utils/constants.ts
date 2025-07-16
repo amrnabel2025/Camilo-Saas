@@ -148,3 +148,91 @@ export const statCardsTemplate = [
     iconKey: "TimerSVG",
   },
 ];
+
+// Solutions page templates (iconKey should be mapped to actual SVG in the component)
+export const solutionsTemplate = [
+  {
+    id: "real-time-fleet-intelligence",
+    iconKey: "Solution1SVG",
+    titleKey: "realTimeFleetIntelligenceTitle",
+    descKey: "realTimeFleetIntelligenceDesc",
+  },
+  {
+    id: "predictive-maintenance",
+    iconKey: "Solution2SVG",
+    titleKey: "predictiveMaintenanceTitle",
+    descKey: "predictiveMaintenanceDesc",
+  },
+  {
+    id: "driver-safety-and-performance",
+    iconKey: "Solution3SVG",
+    titleKey: "driverSafetyPerformanceTitle",
+    descKey: "driverSafetyPerformanceDesc",
+  },
+  {
+    id: "enterprise-integration-and-scalability-fuel",
+    iconKey: "Solution4SVG",
+    titleKey: "enterpriseIntegrationScalabilityFuelTitle",
+    descKey: "enterpriseIntegrationScalabilityFuelDesc",
+  },
+  {
+    id: "enterprise-integration-and-scalability-systems",
+    iconKey: "Solution5SVG",
+    titleKey: "enterpriseIntegrationScalabilitySystemsTitle",
+    descKey: "enterpriseIntegrationScalabilitySystemsDesc",
+  },
+];
+
+export const costEffectiveTemplate = [
+  {
+    iconKey: "Scalability1SVG",
+    titleKey: "flexiblePricingTiersTitle",
+    descKey: "flexiblePricingTiersDesc",
+  },
+  {
+    iconKey: "Scalability2SVG",
+    titleKey: "reducedOperationalOverheadsTitle",
+    descKey: "reducedOperationalOverheadsDesc",
+  },
+  {
+    iconKey: "Scalability3SVG",
+    titleKey: "noHiddenFeesTitle",
+    descKey: "noHiddenFeesDesc",
+  },
+];
+
+export const onboardingTemplate = [
+  {
+    iconKey: "Onboarding1SVG",
+    titleKey: "rapidDeploymentTitle",
+    descKey: "rapidDeploymentDesc",
+  },
+  {
+    iconKey: "Onboarding2SVG",
+    titleKey: "userFriendlyInterfaceTitle",
+    descKey: "userFriendlyInterfaceDesc",
+  },
+  {
+    iconKey: "Onboarding3SVG",
+    titleKey: "dedicatedOnboardingSpecialistTitle",
+    descKey: "dedicatedOnboardingSpecialistDesc",
+  },
+];
+
+export const futureProofTemplate = [
+  {
+    iconKey: "Operations1SVG",
+    titleKey: "continuousFeatureUpdatesTitle",
+    descKey: "continuousFeatureUpdatesDesc",
+  },
+  {
+    iconKey: "Operations2SVG",
+    titleKey: "apiFirstArchitectureTitle",
+    descKey: "apiFirstArchitectureDesc",
+  },
+  {
+    iconKey: "Operations3SVG",
+    titleKey: "dataDrivenGrowthTitle",
+    descKey: "dataDrivenGrowthDesc",
+  },
+];
