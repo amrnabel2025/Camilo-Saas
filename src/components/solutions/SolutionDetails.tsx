@@ -18,7 +18,43 @@ import {
   SolutionTitleLineSVG,
 } from "../../../public/SVGs";
 
-const SolutionDetails = ({ solution }: { solution: any }) => {
+interface Capability {
+  icon?: React.ElementType;
+  title?: string;
+  description?: string;
+  isImage?: boolean;
+}
+
+interface Impact {
+  icon?: React.ElementType;
+  title?: string;
+  description?: string;
+  isImage?: boolean;
+}
+
+interface ImplementationStep {
+  icon?: React.ElementType;
+  step?: string;
+  title?: string;
+  description?: string;
+  isImage?: boolean;
+}
+
+interface Solution {
+  id: string;
+  heroImage: string;
+  pageTitle: string;
+  pageDescription: string;
+  capabilitiesDescription?: string;
+  impactDescription?: string;
+  implementationTopDescription?: string;
+  finalCTA: string;
+  keyCapabilities: Capability[];
+  businessImpact: Impact[];
+  implementationApproach: ImplementationStep[];
+}
+
+const SolutionDetails = ({ solution }: { solution: Solution }) => {
   const t = useTranslations();
 
   return (
@@ -124,7 +160,7 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
               color: "rgba(0, 0, 0, 0.60)",
             }}
           >
-            {t(solution.pageDescription)}
+            {t(solution.pageDescription || "")}
           </Typography>
           <Typography
             variant="h6"
@@ -136,7 +172,7 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
               color: "rgba(0, 0, 0, 0.60)",
             }}
           >
-            {t(solution.impactDescription)}
+            {t(solution.impactDescription || "")}
           </Typography>
         </Box>
 
@@ -157,18 +193,18 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
             <SolutionTitleLineSVG />
           </Box>
           <Grid container spacing={2} mt={2}>
-            {solution.keyCapabilities.map((cap: any, index: number) => {
+            {solution.keyCapabilities.map((cap: Capability, index: number) => {
               const Icon = cap.icon;
               return (
                 <Grid size={{ xs: 12, md: 4 }} key={index}>
                   <Box sx={{ display: "flex", gap: 2, mb: 1 }}>
                     {Icon && <Icon width={60} height={60} />}
                     <Typography variant="h6" fontWeight={700}>
-                      {t(cap.title)}
+                      {t(cap.title || "")}
                     </Typography>
                   </Box>
                   <Typography color="text.secondary">
-                    {t(cap.description)}
+                    {t(cap.description || "")}
                   </Typography>
                 </Grid>
               );
@@ -194,7 +230,7 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
             <SolutionTitleLineSVG />
           </Box>
           <Grid container spacing={4} mt={2} alignItems="stretch">
-            {solution.businessImpact.map((impact: any, index: number) => {
+            {solution.businessImpact.map((impact: Impact, index: number) => {
               const Icon = impact.icon;
               return (
                 <Grid size={{ xs: 12, sm: 6, md: 4 }} mb={6} key={index}>
@@ -218,11 +254,11 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
                       <Box sx={{ display: "flex", gap: 2, mb: 1 }}>
                         {Icon && <Icon width={60} height={60} />}
                         <Typography variant="h6" fontWeight={700}>
-                          {t(impact.title)}
+                          {t(impact.title || "")}
                         </Typography>
                       </Box>
                       <Typography color="text.secondary">
-                        {t(impact.description)}
+                        {t(impact.description || "")}
                       </Typography>
                     </Paper>
                   )}
@@ -291,50 +327,52 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
             justifyContent="center"
             alignItems="stretch"
           >
-            {solution.implementationApproach.map((step: any, index: number) => {
-              const Icon = step.icon;
-              return (
-                <Grid size={{ xs: 12, sm: 6, md: 4 }} mb={6} key={index}>
-                  {step.isImage ? (
-                    <Box
-                      sx={{
-                        height: "100%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        p: 3,
-                      }}
-                    >
-                      <ImpactBusinessImageSVG />
-                    </Box>
-                  ) : (
-                    <Paper
-                      elevation={1}
-                      sx={{
-                        p: 3,
-                        borderRadius: "16px",
-                        textAlign: "center",
-                        height: "100%",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        gap: 2,
-                      }}
-                    >
-                      {Icon && <Icon width={60} height={60} />}
+            {solution.implementationApproach.map(
+              (step: ImplementationStep, index: number) => {
+                const Icon = step.icon;
+                return (
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} mb={6} key={index}>
+                    {step.isImage ? (
+                      <Box
+                        sx={{
+                          height: "100%",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          p: 3,
+                        }}
+                      >
+                        <ImpactBusinessImageSVG />
+                      </Box>
+                    ) : (
+                      <Paper
+                        elevation={1}
+                        sx={{
+                          p: 3,
+                          borderRadius: "16px",
+                          textAlign: "center",
+                          height: "100%",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          gap: 2,
+                        }}
+                      >
+                        {Icon && <Icon width={60} height={60} />}
 
-                      <Typography variant="h6" fontWeight={700}>
-                        {t(step.title)}
-                      </Typography>
-                      <Typography color="text.secondary">
-                        {t(step.description)}
-                      </Typography>
-                    </Paper>
-                  )}
-                </Grid>
-              );
-            })}
+                        <Typography variant="h6" fontWeight={700}>
+                          {t(step.title || "")}
+                        </Typography>
+                        <Typography color="text.secondary">
+                          {t(step.description || "")}
+                        </Typography>
+                      </Paper>
+                    )}
+                  </Grid>
+                );
+              }
+            )}
           </Grid>
         </Box>
 

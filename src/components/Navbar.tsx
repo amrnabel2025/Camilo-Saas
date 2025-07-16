@@ -79,8 +79,6 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = window.innerHeight;
-
       // Scrollspy logic
       let currentSection = "";
       links.forEach((link) => {

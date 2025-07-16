@@ -2,6 +2,7 @@
 
 import { useIsAr } from "@/hooks/useIsAr";
 import { Box, Button, Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import {
   CircleImageSVG,
@@ -16,7 +17,7 @@ import {
   SmallDotSVG,
 } from "../../../public/SVGs";
 
-export default function Main({ t }: { t: any }) {
+export default function Main({ t }: { t: ReturnType<typeof useTranslations> }) {
   const isAr = useIsAr();
   return (
     <Box
@@ -171,7 +172,7 @@ export default function Main({ t }: { t: any }) {
             }}
           >
             {t.rich("subheading", {
-              camelo: (chunks: any) => (
+              camelo: (chunks: React.ReactNode) => (
                 <Box
                   component="span"
                   sx={{ fontWeight: "bold", color: "#e9b838" }}
@@ -179,7 +180,7 @@ export default function Main({ t }: { t: any }) {
                   {chunks}
                 </Box>
               ),
-              gray: (chunks: any) => (
+              gray: (chunks: React.ReactNode) => (
                 <Box component="span" sx={{ color: "#878787" }}>
                   {chunks}
                 </Box>

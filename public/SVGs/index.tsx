@@ -1551,8 +1551,8 @@ export const KeySVG = ({ width, height }: any) => {
           y2="42.0956"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D79B1B" />
-          <stop offset="1" stop-color="#FEF8A1" />
+          <stop stopColor="#D79B1B" />
+          <stop offset="1" stopColor="#FEF8A1" />
         </linearGradient>
       </defs>
     </svg>
@@ -1584,8 +1584,8 @@ export const ImpactSVG = ({ width, height }: any) => {
           y2="36.2516"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D79B1B" />
-          <stop offset="1" stop-color="#FEF8A1" />
+          <stop stopColor="#D79B1B" />
+          <stop offset="1" stopColor="#FEF8A1" />
         </linearGradient>
         <clipPath id="clip0_61418_1035">
           <rect width="30" height="30" fill="white" />
@@ -1618,8 +1618,8 @@ export const ApproachSVG = ({ width, height }: any) => {
           y2="43.0083"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D79B1B" />
-          <stop offset="1" stop-color="#FEF8A1" />
+          <stop stopColor="#D79B1B" />
+          <stop offset="1" stopColor="#FEF8A1" />
         </linearGradient>
         <clipPath id="clip0_61418_1041">
           <rect width="32" height="32" fill="white" />
@@ -1683,8 +1683,8 @@ export const ImpactBusinessImageSVG = () => {
           y2="63.4517"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D79B1B" />
-          <stop offset="1" stop-color="#FEF8A1" />
+          <stop stopColor="#D79B1B" />
+          <stop offset="1" stopColor="#FEF8A1" />
         </linearGradient>
       </defs>
     </svg>

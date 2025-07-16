@@ -1,5 +1,4 @@
 "use client";
-import { useIsAr } from "@/hooks/useIsAr";
 import { Link } from "@/libs/i18n/navigation";
 import {
   costEffectiveTemplate,
@@ -38,8 +37,6 @@ import {
 } from "../../../public/SVGs";
 
 const Solutions = ({ t }: SolutionsProps) => {
-  const isAr = useIsAr();
-
   // Map templates to actual data with icons and translations
   const solutions = solutionsTemplate.map((item) => ({
     id: item.id,
