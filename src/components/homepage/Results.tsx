@@ -142,8 +142,6 @@ const Results = ({ t }: HappyClientProps) => {
           }}
         >
           {t("sectionSubtitle")}
-          <br />
-          {t("sectionSubtitle")}
         </Typography>
         {/* Stat Cards 2x2 Flexbox */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
