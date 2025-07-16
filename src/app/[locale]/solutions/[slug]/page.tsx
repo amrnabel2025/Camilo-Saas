@@ -2,6 +2,7 @@ import SolutionDetails from "@/components/solutions/SolutionDetails";
 import { solutionsData } from "@/utils/solutionsData";
 import { notFound } from "next/navigation";
 
+// @ts-ignore: Ignore type issue in Next.js route params
 export default function SolutionDetailsPage({ params }: any) {
   const solution = solutionsData.find((s) => s?.id === params?.slug);
 
