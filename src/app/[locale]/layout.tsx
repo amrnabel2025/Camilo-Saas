@@ -1,3 +1,4 @@
+import AosInitClient from "@/components/AosInitClient";
 import DisableZoom from "@/components/DisableZoom";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -49,6 +50,7 @@ export default async function RootLayout({
     <html lang={lang} dir={isRtl ? "rtl" : "ltr"}>
       <body className={cn(isRtl ? "rtl" : "ltr")}>
         <NextIntlClientProvider messages={messages}>
+          <AosInitClient />
           <NextAuthProvider>
             <ThemeRegistry>
               <DisableZoom />
@@ -80,7 +82,7 @@ export async function generateMetadata({
   const { locale } = params;
   let messages;
   try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
+    messages = (await import(`../../../messages/${locale}.json`)).default;
   } catch {
     messages = {
       Home: {

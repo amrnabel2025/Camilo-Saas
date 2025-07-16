@@ -11,6 +11,7 @@ export default function Hero({ t }: HeroProps) {
 
   return (
     <Box
+      data-aos="fade-up"
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
@@ -27,6 +28,7 @@ export default function Hero({ t }: HeroProps) {
     >
       {/* Left: Text and Buttons */}
       <Box
+        data-aos="fade-right"
         sx={{
           flex: 1,
           display: "flex",
@@ -124,6 +126,7 @@ export default function Hero({ t }: HeroProps) {
 
       {/* Right: Laptop Image with SVGs */}
       <Box
+        data-aos="fade-left"
         sx={{
           flex: 1,
           position: "relative",

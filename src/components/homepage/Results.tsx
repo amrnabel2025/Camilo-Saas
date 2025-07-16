@@ -98,6 +98,7 @@ const Results = ({ t }: HappyClientProps) => {
 
   return (
     <Box
+      data-aos="fade-up"
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
@@ -147,6 +148,7 @@ const Results = ({ t }: HappyClientProps) => {
         {/* Stat Cards 2x2 Flexbox */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Box
+            data-aos="fade-right"
             sx={{
               display: "flex",
               gap: 2,
@@ -157,6 +159,7 @@ const Results = ({ t }: HappyClientProps) => {
             <StatCard {...statCards[1]} />
           </Box>
           <Box
+            data-aos="fade-left"
             sx={{
               display: "flex",
               gap: 2,

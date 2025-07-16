@@ -19,11 +19,13 @@ const OurFeatures = ({ t }: OurFeaturesProps) => {
     desc,
     image,
     label,
+    dataAos,
   }: {
     title: string;
     desc: string;
     image: string;
     label: string;
+    dataAos?: string;
   }) {
     return (
       <Paper
@@ -40,6 +42,7 @@ const OurFeatures = ({ t }: OurFeaturesProps) => {
           alignItems: "flex-start",
           mb: 2,
         }}
+        data-aos={dataAos}
       >
         <Box
           sx={{
@@ -75,6 +78,7 @@ const OurFeatures = ({ t }: OurFeaturesProps) => {
 
   return (
     <Box
+      data-aos="fade-up"
       sx={{
         width: "100%",
         maxWidth: 1400,
@@ -124,7 +128,10 @@ const OurFeatures = ({ t }: OurFeaturesProps) => {
               minWidth: 0,
             }}
           >
-            <FeatureCard {...feature} />
+            <FeatureCard
+              {...feature}
+              dataAos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+            />
           </Link>
         ))}
       </Box>

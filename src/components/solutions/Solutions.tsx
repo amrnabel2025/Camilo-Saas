@@ -67,9 +67,13 @@ const Solutions = ({ t }: SolutionsProps) => {
   }));
 
   return (
-    <Container maxWidth="xl" sx={{ py: 8 }}>
+    <Container maxWidth="xl" sx={{ py: 8 }} data-aos="fade-up">
       <Grid container spacing={4} alignItems="flex-start">
-        <Grid size={{ xs: 12, md: 6 }} sx={{ mt: { xs: 8, md: 20 } }}>
+        <Grid
+          size={{ xs: 12, md: 6 }}
+          sx={{ mt: { xs: 8, md: 20 } }}
+          data-aos="fade-right"
+        >
           <Typography
             variant="h2"
             component="h1"
@@ -87,7 +91,7 @@ const Solutions = ({ t }: SolutionsProps) => {
             {t("heroSubtitle")}
           </Typography>
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }} sx={{ mt: 5 }}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ mt: 5 }} data-aos="fade-left">
           <Box
             sx={{
               display: "flex",
@@ -106,7 +110,7 @@ const Solutions = ({ t }: SolutionsProps) => {
       </Grid>
 
       {/* Key Solutions Section */}
-      <Box sx={{ my: 15 }}>
+      <Box data-aos="fade-up">
         <Typography
           variant="h3"
           component="h2"
@@ -120,7 +124,7 @@ const Solutions = ({ t }: SolutionsProps) => {
       </Box>
 
       {/* Cost Effective Scalability Section */}
-      <Box sx={{ my: 15 }}>
+      <Box sx={{ my: 15 }} data-aos="fade-up">
         <Typography
           variant="h3"
           component="h2"
@@ -149,7 +153,7 @@ const Solutions = ({ t }: SolutionsProps) => {
       </Box>
 
       {/* Quick Start Onboarding Section */}
-      <Box sx={{ my: 15 }}>
+      <Box sx={{ my: 15 }} data-aos="fade-up">
         <Typography
           variant="h3"
           component="h2"
@@ -176,7 +180,7 @@ const Solutions = ({ t }: SolutionsProps) => {
       </Box>
 
       {/* Future Proof Section */}
-      <Box sx={{ my: 15 }}>
+      <Box data-aos="fade-up">
         <Typography
           variant="h3"
           component="h2"

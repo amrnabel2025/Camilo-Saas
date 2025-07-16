@@ -20,6 +20,7 @@ export default function Main({ t }: { t: any }) {
   const isAr = useIsAr();
   return (
     <Box
+      data-aos="fade-up"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -135,6 +136,7 @@ export default function Main({ t }: { t: any }) {
         <HeroLineSVG />
       </Box>
       <Box
+        data-aos="fade-up"
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
@@ -146,6 +148,7 @@ export default function Main({ t }: { t: any }) {
         }}
       >
         <Box
+          data-aos="fade-right"
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -301,6 +304,7 @@ export default function Main({ t }: { t: any }) {
           </Box>
         </Box>
         <Box
+          data-aos="fade-left"
           sx={{
             position: "relative",
             width: { xs: "100%", md: "auto" },

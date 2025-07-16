@@ -40,7 +40,6 @@ const Navbar = () => {
 
   const ref = useRef(null);
 
-  const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(links[0]?.name || "");
 
@@ -81,7 +80,6 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight = window.innerHeight;
-      setScrolled(window.scrollY > heroHeight - 80);
 
       // Scrollspy logic
       let currentSection = "";
