@@ -18,22 +18,28 @@ import {
   SolutionTitleLineSVG,
 } from "../../../public/SVGs";
 
+const iconMap = {
+  KeySVG,
+  ImpactSVG,
+  ApproachSVG,
+};
+
 interface Capability {
-  icon?: React.ElementType;
+  icon?: string;
   title?: string;
   description?: string;
   isImage?: boolean;
 }
 
 interface Impact {
-  icon?: React.ElementType;
+  icon?: string;
   title?: string;
   description?: string;
   isImage?: boolean;
 }
 
 interface ImplementationStep {
-  icon?: React.ElementType;
+  icon?: string;
   step?: string;
   title?: string;
   description?: string;
@@ -194,7 +200,9 @@ const SolutionDetails = ({ solution }: { solution: Solution }) => {
           </Box>
           <Grid container spacing={2} mt={2}>
             {solution.keyCapabilities.map((cap: Capability, index: number) => {
-              const Icon = cap.icon;
+              const Icon = cap.icon
+                ? iconMap[cap.icon as keyof typeof iconMap]
+                : undefined;
               return (
                 <Grid size={{ xs: 12, md: 4 }} key={index}>
                   <Box sx={{ display: "flex", gap: 2, mb: 1 }}>
@@ -231,7 +239,9 @@ const SolutionDetails = ({ solution }: { solution: Solution }) => {
           </Box>
           <Grid container spacing={4} mt={2} alignItems="stretch">
             {solution.businessImpact.map((impact: Impact, index: number) => {
-              const Icon = impact.icon;
+              const Icon = impact.icon
+                ? iconMap[impact.icon as keyof typeof iconMap]
+                : undefined;
               return (
                 <Grid size={{ xs: 12, sm: 6, md: 4 }} mb={6} key={index}>
                   {impact.isImage ? (
@@ -329,7 +339,9 @@ const SolutionDetails = ({ solution }: { solution: Solution }) => {
           >
             {solution.implementationApproach.map(
               (step: ImplementationStep, index: number) => {
-                const Icon = step.icon;
+                const Icon = step.icon
+                  ? iconMap[step.icon as keyof typeof iconMap]
+                  : undefined;
                 return (
                   <Grid size={{ xs: 12, sm: 6, md: 4 }} mb={6} key={index}>
                     {step.isImage ? (

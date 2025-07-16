@@ -1,4 +1,3 @@
-"use client";
 import SolutionDetails from "@/components/solutions/SolutionDetails";
 import { solutionsData } from "@/utils/solutionsData";
 import { notFound } from "next/navigation";
