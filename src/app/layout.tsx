@@ -1,15 +1,15 @@
-import { setRequestLocale, getMessages } from "next-intl/server";
-import { NextIntlClientProvider } from "next-intl";
 import AosInitClient from "@/components/AosInitClient";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 
 export default async function RootLayout({
   children,
   params,
 }: {
   readonly children: React.ReactNode;
-  readonly params: Promise<{ locale: string }>;
+  readonly params: { locale: string };
 }) {
-  const { locale } = await params; // Wait for the locale from params
+  const { locale } = params; // Use params as a plain object
 
   // Set the request locale globally
   setRequestLocale(locale);
