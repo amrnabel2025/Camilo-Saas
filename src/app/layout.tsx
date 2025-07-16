@@ -9,7 +9,7 @@ export default async function RootLayout({
   readonly children: React.ReactNode;
   readonly params: { locale: string };
 }) {
-  const { locale } = params; // Use params as a plain object
+  const { locale } = params;
 
   // Set the request locale globally
   setRequestLocale(locale);
