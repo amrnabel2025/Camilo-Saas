@@ -34,7 +34,7 @@ export default function Hero({ t }: HeroProps) {
           justifyContent: "center",
           alignItems: { xs: "center", md: "flex-start" },
           mb: { xs: 4, md: 0 },
-          mt: { xs: 4, md: 2 },
+          mt: { xs: 8, md: 2 },
           zIndex: 2,
         }}
       >

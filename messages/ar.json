@@ -682,6 +682,9 @@
           "desc": "مراجعة وتحسين استراتيجية إدارة الوقود بشكل منتظم."
         }
       }
-    }
+    },
+    "keyCapabilitiesLabel": "القدرات الرئيسية",
+    "businessImpactLabel": "أثر الأعمال",
+    "implementationApproachLabel": "نهج التنفيذ"
   }
 }

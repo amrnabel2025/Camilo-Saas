@@ -57,6 +57,7 @@ export default function Main({ t }: { t: any }) {
             py: 1,
             width: "fit-content",
             cursor: "pointer",
+            mx: { xs: "auto", md: 0 },
           }}
         >
           <Box sx={{ width: 20, height: 20 }}>{<ContactSVG />}</Box>
@@ -78,18 +79,20 @@ export default function Main({ t }: { t: any }) {
             flexWrap: "wrap",
             width: "100%",
             gap: { xs: 2, md: 0 },
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           <Typography
             variant="h2"
             sx={{
               fontFamily: "Poppins",
-              fontSize: { xs: 28, sm: 36, md: 48 },
+              fontSize: { xs: 24, sm: 28, md: 48 },
               fontWeight: "bold",
-              lineHeight: { xs: "36px", sm: "48px", md: "61.6px" },
+              lineHeight: { xs: "32px", sm: "36px", md: "61.6px" },
               color: "#000",
               maxWidth: { xs: "100%", md: 726 },
-              textAlign: { xs: "left", md: "inherit" },
+              textAlign: { xs: "center", md: "inherit" },
+              mb: { xs: 1, md: 0 },
             }}
           >
             {t("heading")}
@@ -120,14 +123,17 @@ export default function Main({ t }: { t: any }) {
               boxShadow: "0 2px 8px 0 rgba(233,184,56,0.12)",
 
               textTransform: "none",
-              width: "fit-content",
+              width: { xs: "100%", md: "fit-content" },
+              alignSelf: { xs: "center", md: "unset" },
             }}
           >
             {t("requestDemo")}
           </Button>
         </Box>
       </Box>
-      <HeroLineSVG />
+      <Box sx={{ width: "100%", my: { xs: 2, md: 0 } }}>
+        <HeroLineSVG />
+      </Box>
       <Box
         sx={{
           display: "flex",
@@ -146,7 +152,6 @@ export default function Main({ t }: { t: any }) {
             gap: { xs: 2, md: 2 },
             flex: 1,
             position: "relative",
-            mb: { xs: 4, md: 0 },
             minWidth: { xs: "100%", md: "500px" },
           }}
         >
@@ -155,10 +160,11 @@ export default function Main({ t }: { t: any }) {
             sx={{
               maxWidth: { xs: "100%", md: 512 },
               fontFamily: "Poppins",
-              fontSize: { xs: 16, sm: 18, md: 24 },
-              lineHeight: { xs: "24px", sm: "28px", md: "36px" },
+              fontSize: { xs: 15, sm: 18, md: 24 },
+              lineHeight: { xs: "22px", sm: "28px", md: "36px" },
               color: "#393939",
-              textAlign: { xs: "left", md: "inherit" },
+              textAlign: { xs: "center", md: "inherit" },
+              mb: { xs: 2, md: 0 },
             }}
           >
             {t.rich("subheading", {
@@ -192,6 +198,7 @@ export default function Main({ t }: { t: any }) {
               maxWidth: { xs: "100%", md: 400 },
               position: "relative",
               zIndex: 999999999,
+              alignSelf: { xs: "center", md: "flex-start" },
             }}
           >
             {[
@@ -300,6 +307,10 @@ export default function Main({ t }: { t: any }) {
             mt: { xs: 4, md: 0 },
             display: "flex",
             justifyContent: { xs: "center", md: "flex-end" },
+            alignItems: { xs: "center", md: "flex-end" },
+            minHeight: { xs: 220, md: 550 },
+            maxWidth: { xs: "100%", md: 550 },
+            mx: { xs: "auto", md: 0 },
           }}
         >
           {/* Only show these SVGs on md+ screens */}
@@ -331,24 +342,33 @@ export default function Main({ t }: { t: any }) {
               top: -30,
               right: 30,
               zIndex: 99,
+              display: { xs: "none", md: "block" },
             }}
           >
             <CircleImageSVG />
           </Box>
 
-          <Image
-            src="/contact-img.png"
-            alt="parteners"
-            width={550}
-            height={550}
-            style={{
-              borderRadius: "688.5px",
-              border: "7px solid #E9B838",
-              zIndex: 99999,
+          <Box
+            sx={{
+              width: { xs: 220, sm: 320, md: 550 },
+              height: { xs: 220, sm: 320, md: 550 },
               position: "relative",
-              transform: isAr ? "scaleX(-1)" : "none",
+              mx: { xs: "auto", md: 0 },
             }}
-          />
+          >
+            <Image
+              src="/contact-img.png"
+              alt="parteners"
+              fill
+              style={{
+                borderRadius: "688.5px",
+                border: "7px solid #E9B838",
+                zIndex: 99999,
+                objectFit: "cover",
+                transform: isAr ? "scaleX(-1)" : "none",
+              }}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

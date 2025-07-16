@@ -69,11 +69,21 @@ const Solutions = ({ t }: SolutionsProps) => {
   return (
     <Container maxWidth="xl" sx={{ py: 8 }}>
       <Grid container spacing={4} alignItems="flex-start">
-        <Grid size={{ xs: 12, md: 6 }} sx={{ mt: 20 }}>
-          <Typography variant="h2" component="h1" gutterBottom fontWeight={700}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ mt: { xs: 8, md: 20 } }}>
+          <Typography
+            variant="h2"
+            component="h1"
+            gutterBottom
+            fontWeight={700}
+            sx={{ fontSize: { xs: 24, md: 32 } }}
+          >
             {t("heroTitle")}
           </Typography>
-          <Typography variant="h6" color="text.secondary">
+          <Typography
+            variant="h6"
+            color="text.secondary"
+            sx={{ fontSize: { xs: 16, md: 20 } }}
+          >
             {t("heroSubtitle")}
           </Typography>
         </Grid>

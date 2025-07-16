@@ -36,19 +36,20 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
         <Box
           sx={{
             position: "absolute",
-            bottom: "67%",
+            bottom: { xs: "45%", md: "67%" },
             left: "50%",
             transform: "translateX(-50%)",
             textAlign: "center",
             maxWidth: 900,
             mx: "auto",
+            width: "100%",
           }}
         >
           <Typography
             variant="h2"
             color="black"
             fontWeight={700}
-            sx={{ fontSize: { xs: 28, md: 48 } }}
+            sx={{ fontSize: { xs: 24, md: 48 } }}
           >
             {t(solution.pageTitle)}
           </Typography>
@@ -57,28 +58,49 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
 
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Box>
-          <Typography variant="h4" color="#161C2D" fontWeight={700}>
+          <Typography
+            variant="h4"
+            color="#161C2D"
+            fontWeight={700}
+            sx={{ fontSize: { xs: 24, md: 32 } }}
+            textAlign="center"
+          >
             {t(solution.pageTitle)}
           </Typography>
           <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
               <KeySVG width={24} height={24} />
-              <Typography variant="h6" color="black" fontWeight={700}>
-                Key Capabilities
+              <Typography
+                variant="h6"
+                color="black"
+                fontWeight={700}
+                sx={{ fontSize: { xs: 10, md: 20 } }}
+              >
+                {t("Solutions.keyCapabilitiesLabel")}
               </Typography>
             </Box>
             <Divider orientation="vertical" flexItem />
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
               <ImpactSVG width={24} height={24} />
-              <Typography variant="h6" color="black" fontWeight={700}>
-                Business Impact
+              <Typography
+                variant="h6"
+                color="black"
+                fontWeight={700}
+                sx={{ fontSize: { xs: 10, md: 20 } }}
+              >
+                {t("Solutions.businessImpactLabel")}
               </Typography>
             </Box>
             <Divider orientation="vertical" flexItem />
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
               <ApproachSVG width={24} height={24} />
-              <Typography variant="h6" color="black" fontWeight={700}>
-                Implementation Approach
+              <Typography
+                variant="h6"
+                color="black"
+                fontWeight={700}
+                sx={{ fontSize: { xs: 10, md: 20 } }}
+              >
+                {t("Solutions.implementationApproachLabel")}
               </Typography>
             </Box>
           </Box>
@@ -126,7 +148,7 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
             fontWeight={700}
             sx={{ mb: 4 }}
           >
-            Key Capabilities
+            {t("Solutions.keyCapabilitiesLabel")}
           </Typography>
           <Box sx={{ position: "absolute", top: -40, right: 325 }}>
             <SolutionChartsSVG />
@@ -162,7 +184,7 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
             fontWeight={700}
             sx={{ mb: 4 }}
           >
-            Business Impact
+            {t("Solutions.businessImpactLabel")}
           </Typography>
 
           <Box sx={{ position: "absolute", top: -40, right: 300 }}>
@@ -239,7 +261,7 @@ const SolutionDetails = ({ solution }: { solution: any }) => {
             gutterBottom
             fontWeight={700}
           >
-            Implementation Approach
+            {t("Solutions.implementationApproachLabel")}
           </Typography>
 
           <Box sx={{ position: "absolute", top: -40, right: 200 }}>

@@ -29,17 +29,32 @@ const Footer = () => {
         <Box
           sx={{
             display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
+            alignItems: { xs: "flex-start", md: "center" },
+            justifyContent: { xs: "center", md: "space-between" },
+            flexDirection: { xs: "column", md: "row" },
             flexWrap: "wrap",
             px: 3,
+            gap: { xs: 2, md: 0 },
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           {/* Logo and Brand */}
-          <AppLogoSVG />
+          <Box sx={{ mb: { xs: 2, md: 0 }, mx: { xs: "auto", md: 0 } }}>
+            <AppLogoSVG />
+          </Box>
 
           {/* Navigation Links */}
-          <Box component="nav" sx={{ display: "flex", gap: 4 }}>
+          <Box
+            component="nav"
+            sx={{
+              display: "flex",
+              gap: { xs: 2, md: 4 },
+              flexDirection: { xs: "column", md: "row" },
+              alignItems: { xs: "center", md: "unset" },
+              alignSelf: "center",
+              mb: { xs: 2, md: 0 },
+            }}
+          >
             <Link
               href="#home"
               underline="none"
@@ -70,7 +85,13 @@ const Footer = () => {
             </Link>
           </Box>
           {/* Icons */}
-          <Box display="flex" gap={1.5}>
+          <Box
+            display="flex"
+            gap={1.5}
+            justifyContent={{ xs: "center", md: "flex-end" }}
+            alignSelf="center"
+            mb={{ xs: 2, md: 0 }}
+          >
             <IconButton
               sx={{
                 background: "#E9B838",
@@ -101,16 +122,26 @@ const Footer = () => {
         <Box
           sx={{
             display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
+            alignItems: { xs: "center", md: "center" },
+            justifyContent: { xs: "center", md: "space-between" },
+            flexDirection: { xs: "column", md: "row" },
             flexWrap: "wrap",
             px: 3,
+            gap: { xs: 1.5, md: 0 },
+            textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Typography sx={{ color: "#222", fontSize: 12 }}>
+          <Typography
+            sx={{ color: "#222", fontSize: 12, mb: { xs: 1, md: 0 } }}
+          >
             {t("copyright")}
           </Typography>
-          <Box display="flex" gap={3}>
+          <Box
+            display="flex"
+            gap={3}
+            flexDirection={{ xs: "column", md: "row" }}
+            alignItems={{ xs: "center", md: "unset" }}
+          >
             <Link
               href="/terms"
               sx={{ color: "#222", fontSize: 12, textDecoration: "underline" }}

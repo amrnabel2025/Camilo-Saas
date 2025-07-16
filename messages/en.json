@@ -611,7 +611,10 @@
           "desc": "Regularly review and improve your fuel management strategy."
         }
       }
-    }
+    },
+    "keyCapabilitiesLabel": "Key Capabilities",
+    "businessImpactLabel": "Business Impact",
+    "implementationApproachLabel": "Implementation Approach"
   },
   "amr": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 }
