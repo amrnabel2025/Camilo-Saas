@@ -11,10 +11,8 @@ export default async function RootLayout({
 }) {
   const { locale } = params;
 
-  // Set the request locale globally
   setRequestLocale(locale);
 
-  // Fetch localized messages for the current locale
   const messages = await getMessages();
 
   return (
