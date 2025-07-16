@@ -7,7 +7,7 @@ type Props = {
     slug: string;
   };
 };
-
+// @ts-ignore
 export default function SolutionDetailsPage({ params }: Props) {
   const solution = solutionsData.find((s) => s?.id === params?.slug);
 
