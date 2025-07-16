@@ -33,13 +33,13 @@ export default async function RootLayout({
   params,
 }: {
   readonly children: React.ReactNode;
-  readonly params: { readonly locale: "en" | "ar" };
+  readonly params: Record<string, string>;
 }) {
   const { locale } = params;
-  if (!routing.locales.includes(locale)) {
+  if (!routing.locales.includes(locale as "en" | "ar")) {
     notFound();
   } else {
-    setRequestLocale(locale);
+    setRequestLocale(locale as "en" | "ar");
   }
 
   const lang = await getLocale();
