@@ -383,6 +383,7 @@ export default function Main({ t }: { t: ReturnType<typeof useTranslations> }) {
               height: { xs: 220, sm: 320, md: 550 },
               position: "relative",
               mx: { xs: "auto", md: 0 },
+              left: { xs: 0, md: -15 },
             }}
           >
             <Image
