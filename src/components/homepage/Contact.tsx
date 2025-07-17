@@ -210,62 +210,86 @@ export default function Main({ t }: { t: ReturnType<typeof useTranslations> }) {
                 label: t("emailLabel"),
                 value: t("emailValue"),
                 icon: <MailSVG />,
+                href: `mailto:${t("emailValue")}`,
               },
               {
                 label: t("phoneLabel"),
                 value: t("phoneValue"),
                 icon: <PhoneSVG />,
+                href: `https://wa.me/${t("phoneValue").replace(/[^\d]/g, "")}`,
+                target: "_blank",
+                rel: "noopener noreferrer",
               },
               {
                 label: t("addressLabel"),
                 value: t("addressValue"),
                 icon: <LocationSVG />,
+                href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t("addressValue"))}`,
+                target: "_blank",
+                rel: "noopener noreferrer",
               },
             ].map((item) => (
-              <Box
+              <a
                 key={item.label}
-                sx={{
-                  display: "flex",
-                  gap: 2,
-                  alignItems: "center",
-                  border: "1px solid rgba(233,184,56,0.22)",
-                  borderRadius: 2,
-                  p: { xs: 1, md: 2 },
-                }}
+                href={item.href}
+                target={item.target}
+                rel={item.rel}
+                style={{ textDecoration: "none", color: "inherit" }}
               >
                 <Box
                   sx={{
-                    width: { xs: 36, md: 48 },
-                    height: { xs: 36, md: 48 },
                     display: "flex",
+                    gap: 2,
                     alignItems: "center",
-                    justifyContent: "center",
-                    background: "rgba(233, 184, 56, 0.16)",
-                    borderRadius: "16px",
+                    border: "1px solid rgba(233,184,56,0.22)",
+                    borderRadius: 2,
+                    p: { xs: 1, md: 2 },
+                    transition: "box-shadow 0.2s, border-color 0.2s",
+                    cursor: "pointer",
+                    "&:hover": {
+                      boxShadow: "0 2px 8px 0 rgba(233,184,56,0.12)",
+                      borderColor: "#E9B838",
+                    },
                   }}
                 >
-                  {item.icon}
-                </Box>
-                <Box>
-                  <Typography
-                    variant="caption"
-                    sx={{ color: "rgba(0,0,0,0.5)", fontFamily: "Poppins" }}
-                  >
-                    {item.label}
-                  </Typography>
-                  <Typography
+                  <Box
                     sx={{
-                      fontFamily: "Poppins",
-                      fontWeight: 600,
-                      fontSize: { xs: 12, md: 14 },
-                      textDecoration:
-                        item.label === "Email:" ? "underline" : "none",
+                      width: { xs: 36, md: 48 },
+                      height: { xs: 36, md: 48 },
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "rgba(233, 184, 56, 0.16)",
+                      borderRadius: "16px",
                     }}
                   >
-                    {item.value}
-                  </Typography>
+                    {item.icon}
+                  </Box>
+                  <Box>
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color: "rgba(0,0,0,0.5)",
+                        fontFamily: "Poppins",
+                        textDecoration: "none",
+                      }}
+                    >
+                      {item.label}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: "Poppins",
+                        fontWeight: 600,
+                        fontSize: { xs: 12, md: 14 },
+                        textDecoration:
+                          item.label === "Email:" ? "underline" : "none",
+                      }}
+                    >
+                      {item.value}
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              </a>
             ))}
           </Box>
           {/* Responsive SVG Dots - hide or reposition on mobile */}

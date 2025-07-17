@@ -41,6 +41,8 @@ const OurFeatures = ({ t }: OurFeaturesProps) => {
           flexDirection: "column",
           alignItems: "flex-start",
           mb: 2,
+          minHeight: 400,
+          height: "100%",
         }}
         data-aos={dataAos}
       >
@@ -54,6 +56,8 @@ const OurFeatures = ({ t }: OurFeaturesProps) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            height: 400,
+            minHeight: 400,
           }}
         >
           <img
@@ -61,17 +65,18 @@ const OurFeatures = ({ t }: OurFeaturesProps) => {
             alt={label}
             style={{
               width: "100%",
-              maxWidth: 570,
-              height: "auto",
+              height: "100%",
+              objectFit: "cover",
               display: "block",
-              // maxHeight: 320,
             }}
           />
         </Box>
         <Typography sx={{ fontWeight: 700, fontSize: 18, mb: 1 }}>
           {title}
         </Typography>
-        <Typography sx={{ color: "#555", fontSize: 15 }}>{desc}</Typography>
+        <Typography sx={{ color: "#555", fontSize: 15, flex: 1 }}>
+          {desc}
+        </Typography>
       </Paper>
     );
   }
