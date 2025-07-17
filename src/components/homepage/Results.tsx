@@ -139,9 +139,10 @@ const Results = ({ t }: HappyClientProps) => {
             mb: 4,
             fontSize: { xs: 14, md: 20 },
             lineHeight: "30px",
+            width: { xs: "100%", md: "70%" },
           }}
         >
-          {t("sectionSubtitle")}
+          {t("sectionSubtitle2")}
         </Typography>
         {/* Stat Cards 2x2 Flexbox */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
