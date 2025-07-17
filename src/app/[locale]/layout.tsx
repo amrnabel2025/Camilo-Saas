@@ -33,15 +33,14 @@ export default async function RootLayout({
   params,
 }: {
   readonly children: React.ReactNode;
-  readonly params: { locale: "en" | "ar" };
+  readonly params: { readonly locale: "en" | "ar" };
 }) {
   const { locale } = params;
-
   if (!routing.locales.includes(locale)) {
     notFound();
+  } else {
+    setRequestLocale(locale);
   }
-
-  setRequestLocale(locale);
 
   const lang = await getLocale();
   const messages = await getMessages();
@@ -83,7 +82,7 @@ export async function generateMetadata({
   const { locale } = params;
   let messages;
   try {
-    messages = (await import(`../../../messages/${locale}.json`)).default;
+    messages = (await import(`@/messages/${locale}.json`)).default;
   } catch {
     messages = {
       Home: {
