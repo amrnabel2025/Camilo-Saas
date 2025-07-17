@@ -92,28 +92,40 @@ const Footer = () => {
             alignSelf="center"
             mb={{ xs: 2, md: 0 }}
           >
-            <IconButton
-              sx={{
-                background: "#E9B838",
-                width: 28,
-                height: 28,
-                p: 0,
-                "&:hover": { background: "#e9b838cc" },
-              }}
+            <a
+              href="mailto:mashrouk.support@amk.com.sa"
+              style={{ color: "inherit" }}
             >
-              <BlackMailSVG />
-            </IconButton>
-            <IconButton
-              sx={{
-                background: "#E9B838",
-                width: 28,
-                height: 28,
-                p: 0,
-                "&:hover": { background: "#e9b838cc" },
-              }}
+              <IconButton
+                sx={{
+                  background: "#E9B838",
+                  width: 28,
+                  height: 28,
+                  p: 0,
+                  "&:hover": { background: "#e9b838cc" },
+                }}
+              >
+                <BlackMailSVG />
+              </IconButton>
+            </a>
+            <a
+              href="https://wa.me/+96655 8339229"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "inherit" }}
             >
-              <BlackPhoneSVG />
-            </IconButton>
+              <IconButton
+                sx={{
+                  background: "#E9B838",
+                  width: 28,
+                  height: 28,
+                  p: 0,
+                  "&:hover": { background: "#e9b838cc" },
+                }}
+              >
+                <BlackPhoneSVG />
+              </IconButton>
+            </a>
           </Box>
         </Box>
         {/* Divider */}
