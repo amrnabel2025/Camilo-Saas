@@ -4,6 +4,7 @@ export const solutionsData = [
     heroImage: "/solution-details1.png",
     pageTitle: "Solutions.realTime.pageTitle",
     pageDescription: "Solutions.realTime.pageDescription",
+    pageDescription1: "Solutions.realTime.pageDescription1",
     capabilitiesDescription: "Solutions.realTime.capabilitiesDescription",
     impactDescription: "Solutions.realTime.impactDescription",
     implementationTopDescription:
@@ -103,6 +104,7 @@ export const solutionsData = [
     heroImage: "/solution-details2.png",
     pageTitle: "Solutions.predictive.pageTitle",
     pageDescription: "Solutions.predictive.pageDescription",
+    pageDescription1: "Solutions.predictive.pageDescription1",
     capabilitiesDescription: "Solutions.predictive.capabilitiesDescription",
     impactDescription: "Solutions.predictive.impactDescription",
     implementationTopDescription:
@@ -207,6 +209,7 @@ export const solutionsData = [
     heroImage: "/solution-details3.png",
     pageTitle: "Solutions.driverSafety.pageTitle",
     pageDescription: "Solutions.driverSafety.pageDescription",
+    pageDescription1: "Solutions.driverSafety.pageDescription1",
     capabilitiesDescription: "Solutions.driverSafety.capabilitiesDescription",
     impactDescription: "Solutions.driverSafety.impactDescription",
     implementationTopDescription:
@@ -311,6 +314,7 @@ export const solutionsData = [
     heroImage: "/solution-details4.png",
     pageTitle: "Solutions.fuelManagement.pageTitle",
     pageDescription: "Solutions.fuelManagement.pageDescription",
+    pageDescription1: "Solutions.fuelManagement.pageDescription1",
     capabilitiesDescription: "Solutions.fuelManagement.capabilitiesDescription",
     impactDescription: "Solutions.fuelManagement.impactDescription",
     implementationTopDescription:
@@ -415,6 +419,7 @@ export const solutionsData = [
     heroImage: "/solution-details5.png",
     pageTitle: "Solutions.enterpriseIntegration.pageTitle",
     pageDescription: "Solutions.enterpriseIntegration.pageDescription",
+    pageDescription1: "Solutions.enterpriseIntegration.pageDescription1",
     capabilitiesDescription:
       "Solutions.enterpriseIntegration.capabilitiesDescription",
     impactDescription: "Solutions.enterpriseIntegration.impactDescription",

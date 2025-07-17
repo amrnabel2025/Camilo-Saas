@@ -1,9 +1,32 @@
+"use client";
+import { usePathname, useRouter } from "@/libs/i18n/navigation";
 import { Box, Divider, IconButton, Link, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 import { AppLogoSVG, BlackMailSVG, BlackPhoneSVG } from "../../public/SVGs";
 
 const Footer = () => {
   const t = useTranslations("Footer");
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Scroll or navigate-and-scroll logic (copied from Navbar)
+  const scrollToSection = (hash: string) => {
+    if (!hash) return;
+    const section = document.querySelector(hash);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleFooterNavClick = (hash: string) => {
+    const homePath = "/";
+    const isHome = pathname === "/";
+    if (isHome) {
+      scrollToSection(hash);
+    } else {
+      router.push(`${homePath}${hash}`);
+    }
+  };
   return (
     <Box
       component="footer"
@@ -59,6 +82,10 @@ const Footer = () => {
               href="#home"
               underline="none"
               sx={{ color: "#222", fontSize: 14 }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleFooterNavClick("#home");
+              }}
             >
               {t("home")}
             </Link>
@@ -66,6 +93,10 @@ const Footer = () => {
               href="#services"
               underline="none"
               sx={{ color: "#222", fontSize: 14 }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleFooterNavClick("#services");
+              }}
             >
               {t("services")}
             </Link>
@@ -73,6 +104,10 @@ const Footer = () => {
               href="#vehicle-type"
               underline="none"
               sx={{ color: "#222", fontSize: 14 }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleFooterNavClick("#vehicle-type");
+              }}
             >
               {t("vehicleType")}
             </Link>
@@ -80,6 +115,10 @@ const Footer = () => {
               href="#join-agent"
               underline="none"
               sx={{ color: "#222", fontSize: 14 }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleFooterNavClick("#join-agent");
+              }}
             >
               {t("joinAgent")}
             </Link>

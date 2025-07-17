@@ -19,7 +19,7 @@ export default function Hero({ t }: HeroProps) {
         justifyContent: "space-between",
         px: { xs: 1, sm: 2, md: 10 },
         pt: { xs: 4, md: 20 },
-        minHeight: { md: "70vh" },
+        minHeight: { md: "71vh" },
         background: "linear-gradient(90deg, #fff7e6 0%, #fff 100%)",
         position: "relative",
         width: "100%",

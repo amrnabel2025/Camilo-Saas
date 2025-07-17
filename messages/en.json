@@ -218,6 +218,7 @@
     "seeDetails": "See Details",
     "realTime": {
       "pageTitle": "Real-Time Fleet Intelligence for Informed Decision Making",
+      "pageDescription1": "",
       "pageDescription": "Transform your fleet management approach with Camelo's real-time intelligence solutions that provide unprecedented visibility into every aspect of your operations. Our advanced GPS tracking and telematics platform delivers actionable insights that empower managers to make data-driven decisions with confidence and precision. .",
       "impactDescription": "Camelo's predictive maintenance solution integrates seamlessly with your existing maintenance management systems and fleet operations software, creating a unified workflow that eliminates redundant data entry and ensures consistent information across platforms. The system scales effortlessly from small specialized fleets to large diverse operations without compromising performance or accuracy.",
       "implementationTopDescription": "Our implementation specialists work with your team to configure the real-time intelligence platform to your specific requirements, ensuring rapid deployment and minimal operational disruption. The typical implementation process includes:",
@@ -295,9 +296,10 @@
     },
     "predictive": {
       "pageTitle": "Predictive Maintenance Solutions That Extend Fleet Lifespan",
-      "pageDescription": "Camelo’s predictive maintenance solutions leverage advanced AI algorithms to predict potential issues before they become critical, enabling proactive and efficient fleet management.",
+      "pageDescription1": "Prevent Breakdowns Before They Happen. ",
+      "pageDescription": "Camelo's predictive maintenance solutions transform reactive repair cycles into proactive fleet care, dramatically reducing downtime and extending vehicle lifespan.",
       "capabilitiesDescription": "Our AI-powered algorithms analyze vehicle data to predict maintenance needs and prevent breakdowns.",
-      "impactDescription": "By implementing Camelo’s predictive maintenance solution, you can significantly reduce costs, downtime, and improve fleet reliability.",
+      "impactDescription": "Unlike traditional maintenance approaches that rely on fixed schedules or mileage thresholds, Camelo's predictive system continuously monitors actual vehicle condition, creating individualized maintenance profiles for each asset in your fleet. This precision approach ensures maintenance resources are allocated efficiently while maximizing vehicle availability and performance.",
       "implementationTopDescription": "Our implementation specialists work with your team to configure the predictive maintenance platform for your unique needs. The typical implementation process includes:",
       "finalCTA": "Experience the transformative power of proactive fleet maintenance with Camelo’s predictive solutions.",
       "caps": {
@@ -373,9 +375,10 @@
     },
     "driverSafety": {
       "pageTitle": "Driver Safety & Performance Optimization",
-      "pageDescription": "Camelo’s driver safety and performance optimization solutions empower managers to foster a safer driving culture and optimize fleet utilization.",
+      "pageDescription1": "",
+      "pageDescription": "Develop Safer Drivers and Reduce Risk.",
       "capabilitiesDescription": "Our AI-powered behavior analysis tools help you monitor, coach, and reward drivers for safer, more efficient performance.",
-      "impactDescription": "By implementing Camelo’s driver safety and performance optimization solution, you can significantly reduce accidents, improve compliance, and boost driver retention.",
+      "impactDescription": "Camelo's driver management solutions transform fleet safety culture through advanced monitoring, real-time coaching, and comprehensive performance analytics. Our integrated approach combines AI-powered behavior analysis with customizable training programs to create a continuous improvement cycle that reduces risk while enhancing driver satisfaction and retention.",
       "implementationTopDescription": "Our implementation specialists work with your team to configure the driver safety and performance optimization platform for your unique needs. The typical implementation process includes:",
       "finalCTA": "Experience the transformative power of safer and more efficient fleet operations with Camelo’s driver safety solutions.",
       "caps": {
@@ -451,9 +454,10 @@
     },
     "enterpriseIntegration": {
       "pageTitle": "Enterprise Integration & Scalability",
-      "pageDescription": "Camelo’s enterprise integration and scalability solutions ensure seamless connectivity across your entire business ecosystem, enabling efficient and future-proof operations.",
+      "pageDescription1": "Scale Your Fleet Management as Your Business Grows.",
+      "pageDescription": "Camelo's enterprise integration solutions provide the foundation for a unified operational ecosystem that eliminates data silos and streamlines workflows across your entire organization. Our API-first architecture and flexible deployment options ensure seamless connectivity between fleet operations and your existing business systems, regardless of scale or complexity.",
       "capabilitiesDescription": "Our robust API integrations and modular architecture allow you to connect Camelo with your existing ERP, CRM, and accounting systems.",
-      "impactDescription": "By implementing Camelo’s enterprise integration and scalability solution, you can significantly improve operational efficiency, data consistency, and scalability.",
+      "impactDescription": "  Unlike closed systems that force you into rigid workflows, Camelo's platform adapts to your unique business processes while providing the structure needed for operational excellence. This balanced approach enables you to preserve your competitive advantages while implementing industry best practices for fleet management.",
       "implementationTopDescription": "Our implementation specialists work with your team to configure the enterprise integration platform for your unique needs. The typical implementation process includes:",
       "finalCTA": "Experience the transformative power of seamless enterprise integration with Camelo’s scalability solutions.",
       "caps": {
@@ -537,9 +541,10 @@
     },
     "fuelManagement": {
       "pageTitle": "Fuel Management & Enterprise Scalability",
-      "pageDescription": "Optimize your fleet’s fuel consumption and scale your operations efficiently with Camelo’s advanced fuel management and enterprise integration tools.",
+      "pageDescription1": "",
+      "pageDescription": "Optimize Consumption and Reduce Environmental Impact Camelo's fuel and sustainability management solutions provide enterprises with powerful tools to control fuel costs while advancing environmental responsibility goals. Our integrated platform combines real-time consumption monitoring, route optimization, and comprehensive analytics to identify inefficiencies and implement targeted improvement strategies.",
       "capabilitiesDescription": "Monitor, analyze, and control fuel usage across your entire fleet while seamlessly integrating with your business systems.",
-      "impactDescription": "By implementing Camelo’s fuel management solution, you can reduce fuel costs, improve sustainability, and support business growth.",
+      "impactDescription": "Unlike basic fuel card systems, Camelo's solution creates a complete picture of fuel usage patterns across your entire fleet, correlating consumption with driver behavior, vehicle condition, route characteristics, and operational demands. This holistic approach enables precise intervention where it will have the greatest impact on both costs and emissions",
       "implementationTopDescription": "Our implementation specialists work with your team to configure the fuel management platform for your unique needs. The typical implementation process includes:",
       "finalCTA": "Experience the transformative power of optimized fuel management and scalable operations with Camelo.",
       "caps": {

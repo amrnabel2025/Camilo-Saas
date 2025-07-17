@@ -50,6 +50,7 @@ interface Solution {
   id: string;
   heroImage: string;
   pageTitle: string;
+  pageDescription1: string;
   pageDescription: string;
   capabilitiesDescription?: string;
   impactDescription?: string;
@@ -156,6 +157,18 @@ const SolutionDetails = ({ solution }: { solution: Solution }) => {
             mt: 4,
           }}
         >
+          <Typography
+            variant="h6"
+            component="p"
+            sx={{
+              mb: 4,
+              fontSize: 18,
+              fontWeight: 400,
+              color: "rgba(0, 0, 0, 0.60)",
+            }}
+          >
+            {t(solution.pageDescription1 || "")}
+          </Typography>
           <Typography
             variant="h6"
             component="p"
